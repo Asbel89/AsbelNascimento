@@ -5,8 +5,6 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { SkillBadge } from "@/components/SkillBadge";
 import { ExperienceItem } from "@/components/ExperienceItem";
 import { ChevronLeft, Download } from "lucide-react";
-import { generateCV } from "@/lib/generateCV";
-
 export default function PositionDetail() {
   const { positionId } = useParams();
   const navigate = useNavigate();
@@ -46,7 +44,10 @@ export default function PositionDetail() {
               <span>📍 Dublin, Ireland (Available from August 2026)</span>
             </div>
             <button
-              onClick={() => generateCV(position)}
+              onClick={async () => {
+                const { generateCV } = await import("@/lib/generateCV");
+                generateCV(position);
+              }}
               className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-border bg-card text-foreground hover:bg-secondary transition-colors text-sm font-medium shrink-0"
             >
               <Download size={16} />
@@ -88,7 +89,7 @@ export default function PositionDetail() {
         {/* Cover Letter Section */}
         <section className="mb-12">
           <SectionHeader title="Cover Letter" />
-          <div className="prose prose-invert max-w-none">
+          <div className="max-w-none">
             {position.coverLetter.split("\n\n").map((paragraph, idx) => (
               <p key={idx} className="text-foreground mb-4 whitespace-pre-wrap">
                 {paragraph}
