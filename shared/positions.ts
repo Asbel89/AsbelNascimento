@@ -19,6 +19,7 @@ export interface Position {
   id: string;
   title: string;
   emoji: string;
+  cardDescription: string;
   coverLetter: string;
   summary: string;
   coreSkills: string[];
@@ -33,6 +34,7 @@ export const positions: Position[] = [
     id: "warehouse-operative",
     title: "Warehouse Operative",
     emoji: "📦",
+    cardDescription: "Inventory \u2022 Picking \u2022 Packing",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the Warehouse Operative position within your team. I am excited about the opportunity to bring my dedication, reliability, and strong work ethic to your warehouse environment.
@@ -68,7 +70,7 @@ Asbel Nascimento`,
         ],
       },
       {
-        title: "Orcas Pimentel | São Vicente, Brazil",
+        title: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
         company: "September 2023 - July 2024",
         period: "",
         description: [
@@ -94,6 +96,7 @@ Asbel Nascimento`,
     id: "kitchen-porter",
     title: "Kitchen Porter",
     emoji: "🍽️",
+    cardDescription: "Hygiene \u2022 Food Safety \u2022 Teamwork",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the Kitchen Porter position. I am excited about the opportunity to join your team.
@@ -132,7 +135,7 @@ Asbel Nascimento`,
       },
       {
         title: "Quality Inspector",
-        company: "Orcas Pimentel | São Vicente, Brazil",
+        company: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
         period: "September 2023 - July 2024",
         description: [
           "Delivered exceptional customer relationships by ensuring a clean and organized professional workplace.",
@@ -157,6 +160,7 @@ Asbel Nascimento`,
     id: "housekeeper",
     title: "Housekeeper",
     emoji: "🏨",
+    cardDescription: "Cleaning \u2022 Organization \u2022 Detail",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the Housekeeper position. I am excited about the opportunity to join your team.
@@ -192,7 +196,7 @@ Asbel Nascimento`,
         ],
       },
       {
-        title: "Orcas Pimentel | São Vicente, Brazil",
+        title: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
         company: "September 2023 - July 2024",
         period: "",
         description: [
@@ -218,6 +222,7 @@ Asbel Nascimento`,
     id: "it-support",
     title: "IT Support",
     emoji: "💻",
+    cardDescription: "Troubleshooting \u2022 Hardware \u2022 Networking",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the IT Support position. I am excited about the opportunity to join your team.
@@ -255,7 +260,7 @@ Asbel Nascimento`,
         ],
       },
       {
-        title: "Orcas Pimentel | São Vicente, Brazil",
+        title: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
         company: "September 2023 - July 2024",
         period: "",
         description: [
@@ -296,6 +301,7 @@ Asbel Nascimento`,
     id: "barista",
     title: "Barista",
     emoji: "☕",
+    cardDescription: "Coffee \u2022 Customer Service \u2022 POS",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the Barista position. I am excited about the opportunity to join your team.
@@ -334,7 +340,7 @@ Asbel Nascimento`,
       },
       {
         title: "Quality Inspector",
-        company: "Orcas Pimentel | São Vicente, Brazil",
+        company: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
         period: "September 2023 - July 2024",
         description: [
           "Delivered exceptional customer relationships by maintaining a clean and organized professional workplace.",

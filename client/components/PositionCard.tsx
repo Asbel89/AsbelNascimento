@@ -1,31 +1,44 @@
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import { Package, UtensilsCrossed, Building2, Monitor, Coffee } from "lucide-react";
 
 interface PositionCardProps {
   id: string;
   title: string;
   emoji: string;
+  description: string;
 }
 
-export function PositionCard({ id, title, emoji }: PositionCardProps) {
+const iconMap: Record<string, React.ReactNode> = {
+  "warehouse-operative": <Package size={24} strokeWidth={1.5} />,
+  "kitchen-porter": <UtensilsCrossed size={24} strokeWidth={1.5} />,
+  "housekeeper": <Building2 size={24} strokeWidth={1.5} />,
+  "it-support": <Monitor size={24} strokeWidth={1.5} />,
+  "barista": <Coffee size={24} strokeWidth={1.5} />,
+};
+
+export function PositionCard({ id, title, description }: PositionCardProps) {
   return (
     <Link
       to={`/position/${id}`}
       className={cn(
-        "group relative overflow-hidden rounded-xl bg-card p-6 transition-all duration-300",
-        "border border-border hover:border-primary hover:bg-opacity-80",
-        "hover:shadow-lg hover:scale-105 cursor-pointer"
+        "group card-base p-6 flex flex-col justify-between",
+        "h-[140px] cursor-pointer"
       )}
     >
-      <div className="flex flex-col items-center justify-center text-center space-y-4">
-        <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
-          {emoji}
+      <div className="flex items-start justify-between">
+        <div className="text-primary group-hover:text-secondary transition-colors duration-250">
+          {iconMap[id] || <Package size={24} strokeWidth={1.5} />}
         </div>
-        <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-300">
+      </div>
+      <div>
+        <h3 className="text-[22px] font-semibold text-foreground mb-1">
           {title}
         </h3>
+        <p className="text-sm text-muted-foreground">
+          {description}
+        </p>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
     </Link>
   );
 }

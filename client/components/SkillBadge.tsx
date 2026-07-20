@@ -9,10 +9,10 @@ export function SkillBadge({ skill, variant = "default" }: SkillBadgeProps) {
   return (
     <span
       className={cn(
-        "inline-block px-3 py-1 rounded-full text-sm font-medium transition-colors",
+        "inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-250",
         variant === "primary"
-          ? "bg-primary text-primary-foreground"
-          : "bg-secondary text-secondary-foreground"
+          ? "bg-primary/15 text-primary border border-primary/20 hover:bg-primary/25"
+          : "bg-muted text-secondary-text border border-border hover:border-primary/30"
       )}
     >
       {skill}

@@ -31,24 +31,25 @@ export function PositionSwitcher({
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "flex items-center gap-2 px-3 py-2 rounded-lg border border-border",
-          "bg-card text-foreground hover:bg-secondary transition-colors",
-          "text-sm font-medium whitespace-nowrap"
+          "flex items-center gap-2 px-3 py-2 rounded-xl border transition-all duration-250",
+          "bg-transparent text-foreground text-sm font-medium whitespace-nowrap",
+          isOpen
+            ? "border-primary/40"
+            : "border-border hover:border-primary/30"
         )}
       >
-        <span className="text-base">{currentPosition?.emoji}</span>
         <span className="max-w-[120px] truncate">{currentPosition?.title}</span>
         <ChevronDown
           size={16}
           className={cn(
-            "shrink-0 transition-transform duration-200",
+            "shrink-0 transition-transform duration-200 text-muted-foreground",
             isOpen && "rotate-180"
           )}
         />
       </button>
 
       {isOpen && (
-        <div className="absolute top-full mt-2 right-0 min-w-[220px] bg-card border border-border rounded-lg shadow-lg z-50 overflow-hidden">
+        <div className="absolute top-full mt-2 right-0 min-w-[220px] bg-card border border-border rounded-xl shadow-2xl z-50 overflow-hidden">
           {positions.map((position) => (
             <button
               key={position.id}
@@ -57,14 +58,13 @@ export function PositionSwitcher({
                 setIsOpen(false);
               }}
               className={cn(
-                "w-full text-left px-4 py-2.5 text-sm transition-colors border-b border-border last:border-b-0 flex items-center gap-2",
+                "w-full text-left px-4 py-3 text-sm transition-all duration-200 border-b border-border/50 last:border-b-0",
                 currentPositionId === position.id
-                  ? "bg-primary text-primary-foreground"
-                  : "text-foreground hover:bg-secondary"
+                  ? "bg-primary/15 text-primary"
+                  : "text-secondary-text hover:bg-muted hover:text-foreground"
               )}
             >
-              <span className="text-base shrink-0">{position.emoji}</span>
-              <span className="truncate">{position.title}</span>
+              {position.title}
             </button>
           ))}
         </div>

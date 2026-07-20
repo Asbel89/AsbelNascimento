@@ -4,11 +4,11 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ title }: SectionHeaderProps) {
   return (
-    <div className="pt-6 pb-4">
-      <h2 className="text-xl font-bold text-foreground uppercase tracking-wider">
+    <div className="mb-8">
+      <h2 className="text-[28px] font-bold text-foreground font-display">
         {title}
       </h2>
-      <div className="mt-2 h-0.5 w-12 bg-primary" />
+      <div className="mt-3 h-[2px] w-10 bg-primary rounded-full" />
     </div>
   );
 }
