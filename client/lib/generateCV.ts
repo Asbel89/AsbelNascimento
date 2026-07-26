@@ -8,7 +8,7 @@ const CONTENT_WIDTH = PAGE_WIDTH - MARGIN_LEFT - MARGIN_RIGHT;
 const CONTACT = {
   name: "Asbel Nascimento",
   email: "asbel.nascimento123456@gmail.com",
-  location: "Dublin, Ireland (Available from August 2026)",
+  location: "Dublin, Ireland",
   linkedin: "linkedin.com/in/asbelnascimento",
   instagram: "instagram.com/eubebel.ofc",
 };

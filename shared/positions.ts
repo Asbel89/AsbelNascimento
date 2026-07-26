@@ -27,6 +27,7 @@ export interface Position {
   languages: Language[];
   personalStrengths: string[];
   courses?: Course[];
+  website?: string;
 }
 
 export const positions: Position[] = [
@@ -70,7 +71,7 @@ Asbel Nascimento`,
         ],
       },
       {
-        title: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
+        title: "Otica Prevent | S\u00e3o Vicente, Brazil",
         company: "September 2023 - July 2024",
         period: "",
         description: [
@@ -135,7 +136,7 @@ Asbel Nascimento`,
       },
       {
         title: "Quality Inspector",
-        company: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
+        company: "Otica Prevent | S\u00e3o Vicente, Brazil",
         period: "September 2023 - July 2024",
         description: [
           "Delivered exceptional customer relationships by ensuring a clean and organized professional workplace.",
@@ -196,7 +197,7 @@ Asbel Nascimento`,
         ],
       },
       {
-        title: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
+        title: "Otica Prevent | S\u00e3o Vicente, Brazil",
         company: "September 2023 - July 2024",
         period: "",
         description: [
@@ -260,7 +261,7 @@ Asbel Nascimento`,
         ],
       },
       {
-        title: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
+        title: "Otica Prevent | S\u00e3o Vicente, Brazil",
         company: "September 2023 - July 2024",
         period: "",
         description: [
@@ -296,6 +297,7 @@ Asbel Nascimento`,
       { title: "Masterclass Figma", image: "https://i.ibb.co/dwxgwJNJ/MASTERCLASS-FIGMA-CERTIFICADO.png" },
       { title: "Career Transition to IT", image: "https://i.ibb.co/zTFvyZhv/TRANSI-O-DE-CARREIRA-CERTIFICADO.png" },
     ],
+    website: "https://asbeldev.com",
   },
   {
     id: "barista",
@@ -340,7 +342,7 @@ Asbel Nascimento`,
       },
       {
         title: "Quality Inspector",
-        company: "Orcas Pimentel | S\u00e3o Vicente, Brazil",
+        company: "Otica Prevent | S\u00e3o Vicente, Brazil",
         period: "September 2023 - July 2024",
         description: [
           "Delivered exceptional customer relationships by maintaining a clean and organized professional workplace.",

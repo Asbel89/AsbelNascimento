@@ -4,7 +4,7 @@ import { PositionSwitcher } from "@/components/PositionSwitcher";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SkillBadge } from "@/components/SkillBadge";
 import { ExperienceItem } from "@/components/ExperienceItem";
-import { ChevronLeft, Download, FileText, Eye, Printer, Mail, MapPin, ExternalLink } from "lucide-react";
+import { ChevronLeft, Download, FileText, Eye, Printer, Mail, MapPin, ExternalLink, Globe } from "lucide-react";
 
 export default function PositionDetail() {
   const { positionId } = useParams();
@@ -43,7 +43,7 @@ export default function PositionDetail() {
           <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-1.5 text-xs text-muted-foreground shrink-0">
               <MapPin size={14} />
-              <span>Dublin, Ireland &middot; Available from August 2026</span>
+              <span>Dublin, Ireland</span>
             </div>
             <button
               onClick={async () => {
@@ -73,7 +73,7 @@ export default function PositionDetail() {
           <div className="flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <MapPin size={14} />
-              <span>Dublin, Ireland (Available from August 2026)</span>
+              <span>Dublin, Ireland</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail size={14} />
@@ -84,6 +84,18 @@ export default function PositionDetail() {
                 asbel.nascimento123456@gmail.com
               </a>
             </div>
+            {position.website && (
+              <a
+                href={position.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-all duration-250"
+              >
+                <Globe size={14} />
+                Meu site
+                <ExternalLink size={12} />
+              </a>
+            )}
           </div>
         </div>
 

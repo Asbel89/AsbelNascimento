@@ -143,8 +143,7 @@ export default function Index() {
               <div>
                 <p className="text-secondary-text leading-relaxed">
                   Adaptable to different industries and committed to continuous
-                  professional development. Available from August 2026 in Dublin,
-                  Ireland.
+                  professional development, based in Dublin, Ireland.
                 </p>
               </div>
             </div>
