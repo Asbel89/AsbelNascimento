@@ -63,12 +63,15 @@ export default function Index() {
 
             {/* Right Column */}
             <div className="flex-shrink-0 flex flex-col items-center gap-6">
-              <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-primary/40">
-                <img
-                  src="/profile.jpeg"
-                  alt="Asbel Nascimento"
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative w-40 h-40 md:w-52 md:h-52">
+                <div className="absolute inset-0 rounded-full animate-pulse-ring" />
+                <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/40">
+                  <img
+                    src="/profile.jpeg"
+                    alt="Asbel Nascimento"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
               <div className="flex items-center gap-4">
                 <a
