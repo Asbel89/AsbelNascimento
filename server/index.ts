@@ -2,6 +2,8 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+import { handleChat, handleChatStream, handleGetStats, handleGetSessions } from "./routes/chat";
+import { rateLimiter, validateChatInput } from "./middleware";
 
 export function createServer() {
   const app = express();
@@ -18,6 +20,12 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  // AI Career Assistant routes
+  app.post("/api/chat", rateLimiter, validateChatInput, handleChat);
+  app.post("/api/chat/stream", rateLimiter, validateChatInput, handleChatStream);
+  app.get("/api/admin/stats", handleGetStats);
+  app.get("/api/admin/sessions", handleGetSessions);
 
   return app;
 }

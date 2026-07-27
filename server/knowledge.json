@@ -1,0 +1,1035 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-07-27",
+  "entries": [
+    {
+      "id": "greeting-1",
+      "category": "greetings",
+      "keywords": ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "greetings", "sup", "yo", "ola", "oi"],
+      "question": "^(hi|hello|hey|good morning|good afternoon|good evening|greetings|sup|yo|ola|oi)",
+      "answer": "Hello! Welcome to Asbel's portfolio. I'm his AI career assistant and I can tell you everything about his experience, skills, certifications, and projects. Feel free to ask me anything, or use the quick buttons below to get started."
+    },
+    {
+      "id": "greeting-2",
+      "category": "greetings",
+      "keywords": ["how are you", "how do you do", "how is it going"],
+      "question": "^(how are you|how do you do|how is it going)",
+      "answer": "I'm doing well, thank you! I'm here to help you learn about Asbel's professional background. What would you like to know about him?"
+    },
+    {
+      "id": "about-1",
+      "category": "about",
+      "keywords": ["tell me about", "about yourself", "about him", "about candidate", "about applicant"],
+      "question": "tell me about (asbel|yourself|him|candidate|applicant)",
+      "answer": "Asbel Nascimento is a motivated professional currently based in Dublin, Ireland. Motivated professional relocating to Ireland with experience in quality inspection, logistics, customer service, and IT support. Passionate about learning, teamwork, and delivering excellent results. Currently building technical skills in web development and cloud technologies. He has hands-on experience in quality inspection, customer service, and IT support, and is actively building technical skills in web development. He holds certifications from AWS, and has completed courses in front-end development, UX design, and programming fundamentals. Would you like to know more about his specific skills, experience, or certifications?"
+    },
+    {
+      "id": "about-2",
+      "category": "about",
+      "keywords": ["who are you", "who is you", "what are you", "your name"],
+      "question": "who (is|are) you|what are you|your name",
+      "answer": "I'm Asbel Nascimento's AI career assistant. I have complete knowledge of his resume, certifications, projects, skills, and experience. I'm here to help you learn about him and determine if he's a good fit for your team. What would you like to know?"
+    },
+    {
+      "id": "about-3",
+      "category": "about",
+      "keywords": ["full name", "what is his name", "what is your name"],
+      "question": "what (is his|is your) (name|full name)",
+      "answer": "His full name is Asbel Nascimento. He is currently based in Dublin, Ireland, and is actively seeking new opportunities."
+    },
+    {
+      "id": "about-4",
+      "category": "about",
+      "keywords": ["where does he live", "where is asbel", "where is he based", "location"],
+      "question": "where (is he|does he live|is asbel|based)",
+      "answer": "Asbel has already relocated to Dublin, Ireland. He is locally based and available to work without any relocation assistance needed."
+    },
+    {
+      "id": "about-5",
+      "category": "about",
+      "keywords": ["age", "old", "born", "birthday", "date of birth"],
+      "question": "old|age|born|birthday|date of birth",
+      "answer": "Asbel prefers not to share his exact age, but he is a young professional who is energetic, motivated, and ready to contribute. He is at the beginning of an exciting career transition and brings fresh enthusiasm to every opportunity."
+    },
+    {
+      "id": "skills-1",
+      "category": "skills",
+      "keywords": ["technologies", "tech", "skills", "tools", "what does he know", "what does he use"],
+      "question": "what (technologies|tech|skills|tools) (does he know|does he use|has he|is he familiar)",
+      "answer": "Asbel's technical skills include: Front-end: HTML, CSS, JavaScript, React basics. Tools: Git, GitHub, Figma, Microsoft Office. Concepts: Responsive Design, Version Control, UI/UX Basics. He is also actively learning TypeScript, React, Node.js, Cloud (AWS). He has completed relevant certifications including AWS Cloud Foundations and Introduction to Front-End Development."
+    },
+    {
+      "id": "skills-2",
+      "category": "skills",
+      "keywords": ["skill", "ability", "capable", "competent", "what can he do"],
+      "question": "skill|ability|capable|competen|what can he do",
+      "answer": "Asbel's key skills include: Customer Service, Warehouse Operations, Cleaning & Hygiene, Food Safety, Communication, Problem Solving, Teamwork, Adaptability, Time Management, IT Support, Microsoft Office, Hardware Troubleshooting, Networking Basics, HTML, CSS, JavaScript, Git, Figma. He is continuously expanding his skill set through certifications and personal projects."
+    },
+    {
+      "id": "skills-3",
+      "category": "skills",
+      "keywords": ["strongest skill", "best skill", "strongest technical"],
+      "question": "strongest (skill|technical|ability)|best (skill|at)",
+      "answer": "Asbel's strongest technical skill is his front-end web development ability, particularly with HTML, CSS, and JavaScript, combined with his growing React and TypeScript knowledge - evidenced by his personal portfolio website. Beyond technical skills, his strongest overall asset is his adaptability and fast learning ability, which has allowed him to succeed across multiple industries."
+    },
+    {
+      "id": "strengths-1",
+      "category": "strengths",
+      "keywords": ["biggest strength", "greatest strength", "what is his strength"],
+      "question": "biggest strength|greatest strength|what is his strength",
+      "answer": "Asbel's biggest strength is his adaptability combined with a genuine drive to learn. He has successfully transitioned between industries - from quality inspection to customer service to IT support to web development - each time quickly ramping up and delivering results. He doesn't just learn to pass a test; he earns certifications and builds real projects to deepen his understanding. This growth mindset, paired with his reliability and positive attitude, makes him a strong addition to any team."
+    },
+    {
+      "id": "weakness-1",
+      "category": "weaknesses",
+      "keywords": ["weakness", "weak point", "area of improvement", "not good at"],
+      "question": "weakness|weak point|area of improvement|not good at",
+      "answer": "Asbel is honest about his areas for growth. He is still building his experience with enterprise-level technologies and has not yet worked with Kubernetes or advanced cloud infrastructure in production. However, he compensates with a fast learning curve - he's earned 13+ certifications while actively working, showing he can quickly bridge any knowledge gaps. He also acknowledges that his English, while improving daily through immersion in Dublin, is still at an intermediate level. He is committed to continuous improvement in all areas."
+    },
+    {
+      "id": "strengths-2",
+      "category": "strengths",
+      "keywords": ["strength", "good at", "positive"],
+      "question": "strength|good at|positive",
+      "answer": "Key strengths include: Fast learner with a genuine curiosity for new technologies, Strong problem-solving mindset, Excellent teamwork and communication skills, Reliable, punctual, and hardworking, Adaptable to different industries and environments, Continuous learning attitude with completed certifications in AWS, UX, and programming, Professional and friendly communication style, Growth mindset with real project experience."
+    },
+    {
+      "id": "experience-1",
+      "category": "experience",
+      "keywords": ["experience", "work history", "previous jobs", "background", "work experience"],
+      "question": "experience|work history|previous jobs|background|work experience",
+      "answer": "Asbel has diverse professional experience: Quality Inspector at Brazil (July 2024 - Present) - Inspected products to ensure compliance with company procedures in a fast-paced environment, Demonstrated reliability, punctuality, and strong work ethic, Collaborated with different teams to ensure efficient operations, Maintained clean and organized work areas while complying with strict procedures. Customer Service Assistant at Brazil (August 2024 - Present) - Maintained excellent customer relationships through a clean and organized environment, Developed strong communication and interpersonal skills, Worked efficiently to ensure smooth daily operations, Provided outstanding service leading to positive customer feedback. Otica Prevent at Sao Vicente, Brazil (September 2023 - July 2024) - Assisted customers by identifying issues and providing detailed resolutions, Supported daily business activities and administrative tasks, Maintained professionalism and received excellent customer feedback, Collaborated with team members to ensure efficient operations. This diverse background gives him strong transferable skills across communication, problem-solving, and teamwork."
+    },
+    {
+      "id": "experience-2",
+      "category": "experience",
+      "keywords": ["how many years", "years of experience", "how long"],
+      "question": "how many years|years of experience|how long",
+      "answer": "Asbel has over 2 years of professional experience across quality inspection, customer service, and IT support roles. While his formal experience is growing, his dedication to continuous learning is evidenced by 13+ professional certifications earned alongside his work."
+    },
+    {
+      "id": "projects-1",
+      "category": "projects",
+      "keywords": ["projects", "has he built", "portfolio", "has he done"],
+      "question": "what (projects|has he built|portfolio|has he done)",
+      "answer": "Asbel has built some impressive personal projects: Personal Portfolio Website: A professional portfolio website built with React, TypeScript, Tailwind CSS, and Express. Features a responsive design, dark theme, CV generation, and an integrated AI career assistant. Built with React, TypeScript, Tailwind CSS, Express, Vite. CV Generator: A dynamic resume builder that allows recruiters to view tailored versions of Asbel's CV for specific job positions. Built with React, TypeScript, PDF Generation. You can explore his work at his portfolio website: https://asbeldev.com"
+    },
+    {
+      "id": "projects-2",
+      "category": "projects",
+      "keywords": ["portfolio", "website", "github"],
+      "question": "portfolio|website|github",
+      "answer": "You can explore Asbel's work at: Portfolio: https://asbeldev.com, LinkedIn: linkedin.com/in/asbelnascimento. His portfolio includes a professional website built with React, TypeScript, Tailwind CSS, and Express, featuring a responsive design, dark theme, CV generation, and this AI career assistant."
+    },
+    {
+      "id": "certifications-1",
+      "category": "certifications",
+      "keywords": ["certification", "certificate", "credentials", "what has he certified"],
+      "question": "certifications?|certificates?|what has he certified|credentials",
+      "answer": "Asbel holds 13 professional certifications: 1. AWS Cloud Foundations, 2. AWS - Foundations of Prompt Engineering, 3. Amazon Bedrock, 4. Introduction to Front-End Development, 5. UX Design: Digital Products, 6. Data Analysis - Google Sheets, 7. Java - First Application, 8. Getting Started in Programming, 9. Bootcamp - Git and GitHub Code Versioning, 10. Bootcamp - Client x Server Communication, 11. Career Transition to IT, 12. Masterclass Figma, 13. Administrative Assistant. These demonstrate his commitment to continuous learning across cloud technologies (AWS), design (UX, Figma), programming (Java, front-end development), and professional skills."
+    },
+    {
+      "id": "aws-1",
+      "category": "cloud",
+      "keywords": ["aws", "cloud", "amazon web services"],
+      "question": "aws|cloud",
+      "answer": "Yes! Asbel has foundational knowledge of cloud technologies. He has completed AWS Cloud Foundations and AWS - Foundations of Prompt Engineering certifications. He is also familiar with Amazon Bedrock. He is actively expanding his cloud skills and is enthusiastic about working with cloud-based solutions."
+    },
+    {
+      "id": "languages-1",
+      "category": "languages",
+      "keywords": ["english", "language", "speak", "portuguese", "bilingual"],
+      "question": "english|language|speak|portuguese|bilingual",
+      "answer": "Asbel speaks Portuguese (Native) and English (Intermediate, improving daily through immersion in Ireland). Since relocating to Dublin, he has been improving his English daily through real-world immersion and professional interactions."
+    },
+    {
+      "id": "availability-1",
+      "category": "availability",
+      "keywords": ["relocat", "where is he", "where does he live", "based"],
+      "question": "relocat|where (is he|does he live|based)",
+      "answer": "Asbel has already relocated to Dublin, Ireland. He is locally based and available to work without any relocation assistance needed."
+    },
+    {
+      "id": "sponsorship-1",
+      "category": "availability",
+      "keywords": ["sponsor", "visa", "work permit", "legally"],
+      "question": "sponsor|visa|work permit|legally",
+      "answer": "Asbel does not require visa sponsorship. He is already based in Dublin, Ireland, and is available to start immediately."
+    },
+    {
+      "id": "start-date-1",
+      "category": "availability",
+      "keywords": ["available", "when can he start", "start date", "notice period"],
+      "question": "available|when can he start|start date|notice period",
+      "answer": "Asbel is available immediately. He can start working as soon as the onboarding process allows."
+    },
+    {
+      "id": "industries-1",
+      "category": "industries",
+      "keywords": ["industry", "sector", "what kind of jobs", "what kind of work", "what kind of roles"],
+      "question": "industr|sector|what (kind of )?(jobs?|work|roles?)",
+      "answer": "Asbel has experience across several industries: Quality Inspection and Logistics, Customer Service and Retail, Optical Retail, IT Support, Web Development (learning and personal projects). He is open to opportunities in any of these areas and is particularly interested in roles where he can grow his technical skills while contributing to a motivated team."
+    },
+    {
+      "id": "positions-1",
+      "category": "positions",
+      "keywords": ["positions", "roles", "what positions", "what roles"],
+      "question": "what (positions?|roles?) (is he|was he|has he)",
+      "answer": "Asbel has applied for or worked in the following roles: Warehouse Operative, Kitchen Porter, Housekeeper, IT Support, Barista. Each role showcases his versatility and willingness to contribute in different environments."
+    },
+    {
+      "id": "why-hire-1",
+      "category": "why-hire",
+      "keywords": ["why should we hire", "why hire him", "hire asbel"],
+      "question": "why (should we hire|hire him|him|hire asbel)",
+      "answer": "Asbel brings a unique combination of real-world experience across multiple industries and a strong drive to learn. Here is why he stands out: Diverse experience in quality inspection, customer service, and IT support, Fast learner who has earned 13+ certifications while working, Technical curiosity with growing web development skills (React, TypeScript, CSS), Strong soft skills: reliable, punctual, great teamwork, and excellent communication, Already in Dublin - no relocation or sponsorship complications, Growth mindset: he doesn't just do the job, he continuously improves. He is the kind of person who takes initiative and grows with the team."
+    },
+    {
+      "id": "why-hire-2",
+      "category": "why-hire",
+      "keywords": ["what makes him different", "what makes him special", "what makes him unique", "stand out"],
+      "question": "what makes him (different|special|unique|stand out)",
+      "answer": "What sets Asbel apart is his combination of adaptability and continuous learning. While many professionals stay in one lane, Asbel has successfully worked across quality inspection, customer service, and IT support. He earned 13+ professional certifications while actively working, showing genuine dedication to growth. He also built a professional portfolio website from scratch using modern technologies like React and TypeScript - all while transitioning careers. This demonstrates initiative, technical curiosity, and the ability to learn fast in any environment."
+    },
+    {
+      "id": "why-hire-3",
+      "category": "why-hire",
+      "keywords": ["sell me", "elevator pitch", "pitch asbel", "convince me"],
+      "question": "sell me|elevator pitch|pitch asbel|convince me",
+      "answer": "Here is why Asbel deserves your attention: He is a fast learner who earned 13+ professional certifications while working across multiple industries. He built a full-stack portfolio website using React, TypeScript, and Express - demonstrating real technical ability. He is already based in Dublin, available immediately, and requires no sponsorship. Most importantly, he has the growth mindset and reliability that make him an asset to any team. Would you like to explore any specific aspect of his profile?"
+    },
+    {
+      "id": "role-warehouse-1",
+      "category": "specific-roles",
+      "keywords": ["warehouse", "picking", "packing", "forklift", "stock", "logistics"],
+      "question": "warehouse|picking|packing|forklift|stock|logistics",
+      "answer": "Asbel has relevant experience for warehouse roles. He has worked as a Quality Inspector where he inspected products, maintained organized work areas, and collaborated with teams in fast-paced environments. His skills include stock organization, quality control, time management, and teamwork. He is physically fit, reliable, and comfortable standing for long periods and handling heavy items. His attention to detail and ability to follow strict procedures make him a strong candidate for warehouse operations."
+    },
+    {
+      "id": "role-barista-1",
+      "category": "specific-roles",
+      "keywords": ["barista", "coffee", "latte", "espresso", "cafe"],
+      "question": "barista|coffee|latte|espresso|cafe",
+      "answer": "Asbel has a genuine interest in coffee culture and is eager to develop his barista skills. He brings strong customer service experience from his roles in retail and quality inspection, along with excellent communication skills and the ability to work efficiently in fast-paced environments. He is a quick learner, physically fit for long standing periods, and excited about learning the art and science of coffee preparation."
+    },
+    {
+      "id": "role-kitchen-1",
+      "category": "specific-roles",
+      "keywords": ["kitchen", "porter", "food", "dishwash", "cook"],
+      "question": "kitchen|porter|food|dishwash|cook",
+      "answer": "Asbel has the qualities needed for a kitchen porter role. He has strong attention to detail from quality inspection work, understands food safety and hygiene standards, and excels in fast-paced team environments. He is reliable, hardworking, physically fit, and comfortable with standing for extended periods. His positive attitude and willingness to learn make him a quick adapter to any kitchen environment."
+    },
+    {
+      "id": "role-housekeeping-1",
+      "category": "specific-roles",
+      "keywords": ["housekeep", "clean", "maintenance", "maid"],
+      "question": "housekeep|clean|maintenance|maid",
+      "answer": "Asbel has solid experience relevant to housekeeping. As a Quality Inspector, he maintained clean and organized work areas while following strict procedures. He is detail-oriented, physically fit, and understands the importance of hygiene standards. He is reliable, punctual, and takes pride in maintaining high cleanliness standards. His teamwork skills ensure he can coordinate effectively with other staff."
+    },
+    {
+      "id": "role-it-1",
+      "category": "specific-roles",
+      "keywords": ["it support", "helpdesk", "troubleshoot", "tech support", "desk"],
+      "question": "it support|helpdesk|troubleshoot|tech support|desk",
+      "answer": "Asbel has practical IT support experience. He has investigated technical issues, followed detailed procedures, maintained accurate documentation, and provided customer-focused IT solutions. His technical skills include Microsoft Office, hardware troubleshooting, networking basics, and customer support. He holds relevant certifications including AWS Cloud Foundations and has completed courses in Git, front-end development, and programming. He is passionate about technology and continuously expanding his technical expertise."
+    },
+    {
+      "id": "role-cybersecurity-1",
+      "category": "specific-roles",
+      "keywords": ["cyber", "security", "information security", "network security"],
+      "question": "cyber|security|information security|network security",
+      "answer": "Asbel has foundational awareness of security concepts through his IT support experience and career transition coursework. While he doesn't yet have specialized cybersecurity certifications, his strong problem-solving mindset, attention to detail from quality inspection work, and commitment to continuous learning make him well-positioned to develop in this area. He has already demonstrated his ability to learn complex topics quickly through his 13+ certifications."
+    },
+    {
+      "id": "role-developer-1",
+      "category": "specific-roles",
+      "keywords": ["developer", "programming", "coding", "frontend", "front-end", "web develop"],
+      "question": "developer|programming|coding|frontend|front-end|web develop",
+      "answer": "Asbel is building his web development skills through personal projects and continuous learning. He has completed courses in HTML, CSS, JavaScript, Java, and front-end development. He built his portfolio website using React, TypeScript, Tailwind CSS, and Express - demonstrating practical full-stack ability. He is still growing in this area but shows strong potential and genuine passion for technology."
+    },
+    {
+      "id": "languages-tech-1",
+      "category": "tech-languages",
+      "keywords": ["python", "java", "react", "node", "typescript", "javascript"],
+      "question": "python|java|react|node|typescript|javascript",
+      "answer": "Asbel has foundational knowledge in several programming languages and frameworks: JavaScript: Used in his portfolio website project, HTML/CSS: Core front-end skills, Java: Completed 'Java - First Application' certification, React: Currently learning and applied in his portfolio, TypeScript: Used in his portfolio project. He is actively expanding his programming skills through certifications and personal projects."
+    },
+    {
+      "id": "personal-1",
+      "category": "personal",
+      "keywords": ["hobby", "hobbies", "interest", "outside work", "free time", "personal"],
+      "question": "hobby|hobbies|interest|outside work|free time|personal",
+      "answer": "Outside of work, Asbel is passionate about technology and continuous learning. He enjoys building personal projects, exploring new technologies, and earning certifications. He is also interested in coffee culture, UX design, and creative problem-solving. His curiosity and drive for self-improvement extend beyond his professional life."
+    },
+    {
+      "id": "motivation-1",
+      "category": "motivation",
+      "keywords": ["motivate", "drive", "passion", "why", "goal", "ambition"],
+      "question": "motivat|drive|passion|why|goal|ambition",
+      "answer": "Asbel is motivated by continuous learning and professional growth. His career goal is to find opportunities in Ireland where he can apply his diverse experience, strong work ethic, and growing technical skills to contribute to a motivated team. He believes in the power of adaptation and has proven his ability to succeed in different industries and environments."
+    },
+    {
+      "id": "teamwork-1",
+      "category": "teamwork",
+      "keywords": ["team", "teamwork", "collaborate", "collaboration"],
+      "question": "team|teamwork|collaborate|collaboration",
+      "answer": "Asbel excels in team environments. In every role he has held, he has consistently collaborated with colleagues to ensure efficient operations. His communication skills, positive attitude, and willingness to support others make him a valued team member. He thrives in collaborative settings where he can contribute to shared goals while learning from others."
+    },
+    {
+      "id": "salary-1",
+      "category": "compensation",
+      "keywords": ["salary", "pay", "compensation", "wage", "money"],
+      "question": "salary|pay|compensation|wage|money",
+      "answer": "Asbel is open to discussing compensation based on the role and its requirements. He is primarily motivated by the opportunity to grow, contribute to a great team, and build a meaningful career. For specific salary discussions, he would be happy to address this directly in an interview."
+    },
+    {
+      "id": "culture-1",
+      "category": "culture",
+      "keywords": ["company", "team", "environment", "culture", "what kind of company"],
+      "question": "what (kind of )?(company|team|environment|culture)",
+      "answer": "Asbel is looking for a company that values growth, teamwork, and continuous improvement. He thrives in environments that are fast-paced, collaborative, and supportive of learning. Whether it is a startup or an established company, what matters most to him is being part of a team where he can contribute meaningfully while continuing to develop his skills."
+    },
+    {
+      "id": "remote-1",
+      "category": "work-arrangement",
+      "keywords": ["remote", "work from home", "hybrid", "onsite", "office"],
+      "question": "remote|work from home|hybrid|onsite|office",
+      "answer": "Asbel is flexible regarding work arrangements. He is open to on-site, hybrid, or remote positions depending on the role requirements. He is based in Dublin, Ireland, so on-site and hybrid roles are particularly convenient for him."
+    },
+    {
+      "id": "role-fit-1",
+      "category": "role-fit",
+      "keywords": ["is this role right", "is this position right", "is this job right", "suitable", "fit"],
+      "question": "is this (role|position|job) (right|good|suitable|fit)",
+      "answer": "Asbel is highly adaptable and has succeeded across multiple industries. While his background may not match every requirement perfectly, his fast learning ability, strong work ethic, and genuine enthusiasm make him a valuable candidate. He has consistently demonstrated that he can quickly ramp up in new environments and deliver results. If you would like to discuss how his specific experience aligns with your needs, he would be happy to chat in an interview."
+    },
+    {
+      "id": "references-1",
+      "category": "references",
+      "keywords": ["refer", "reference"],
+      "question": "refer|reference",
+      "answer": "Asbel can provide references upon request. His previous managers and colleagues can speak to his reliability, work ethic, and positive attitude. He would be happy to share references during the interview process."
+    },
+    {
+      "id": "closing-1",
+      "category": "closing",
+      "keywords": ["hire", "interview", "opportunity", "contribute", "join", "next step"],
+      "question": "hire|interview|opportunity|contribute|join|next step",
+      "answer": "If you believe Asbel's background aligns with your team's needs, he would genuinely appreciate the opportunity to discuss how he can contribute in an interview. He is available immediately, based in Dublin, and ready to bring his strong work ethic, diverse experience, and growth mindset to your organization. You can reach him at: Email: asbel.nascimento123456@gmail.com, LinkedIn: linkedin.com/in/asbelnascimento, Website: https://asbeldev.com"
+    },
+    {
+      "id": "closing-2",
+      "category": "closing",
+      "keywords": ["thank", "thanks", "bye", "goodbye", "cheers"],
+      "question": "thank|thanks|bye|goodbye|cheers",
+      "answer": "Thank you for your interest in Asbel's profile! If you have any more questions or would like to discuss potential opportunities, feel free to reach out anytime. You can contact him at asbel.nascimento123456@gmail.com or via LinkedIn: linkedin.com/in/asbelnascimento"
+    },
+    {
+      "id": "design-patterns-1",
+      "category": "design-patterns",
+      "keywords": ["design pattern", "mvc", "model view controller"],
+      "question": "design pattern|mvc|model view controller",
+      "answer": "Asbel is familiar with common design patterns through his programming courses and self-study. The MVC (Model-View-Controller) pattern separates application logic into three interconnected components, which helps organize code and maintainability. He has applied similar architectural concepts in his web development projects."
+    },
+    {
+      "id": "design-patterns-2",
+      "category": "design-patterns",
+      "keywords": ["solid", "solid principles"],
+      "question": "solid|solid principles",
+      "answer": "Asbel has learned about SOLID principles as part of his programming education. SOLID stands for Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion. These principles help write maintainable, scalable, and testable code. He applies these concepts in his development work."
+    },
+    {
+      "id": "design-patterns-3",
+      "category": "design-patterns",
+      "keywords": ["singleton", "factory", "observer", "strategy"],
+      "question": "singleton|factory|observer|strategy",
+      "answer": "Asbel has studied common GoF (Gang of Four) design patterns including Singleton, Factory, Observer, and Strategy patterns. These patterns provide reusable solutions to common software design problems. He understands when and how to apply these patterns to write better-structured code."
+    },
+    {
+      "id": "cloud-patterns-1",
+      "category": "cloud-patterns",
+      "keywords": ["cloud pattern", "microservices", "serverless"],
+      "question": "cloud pattern|microservices|serverless",
+      "answer": "Asbel has foundational knowledge of cloud architecture patterns including microservices and serverless computing. Through his AWS certifications, he has learned about scalable, distributed systems and how cloud services can be used to build resilient applications."
+    },
+    {
+      "id": "messaging-1",
+      "category": "messaging",
+      "keywords": ["message queue", "pub sub", "publish subscribe", "event driven"],
+      "question": "message queue|pub sub|publish subscribe|event driven",
+      "answer": "Asbel has basic awareness of messaging patterns like message queues and pub/sub systems through his IT support and web development studies. He understands how these patterns enable loose coupling between system components and improve scalability."
+    },
+    {
+      "id": "cyber-advanced-1",
+      "category": "cybersecurity",
+      "keywords": ["penetration testing", "ethical hacking", "vulnerability"],
+      "question": "penetration testing|ethical hacking|vulnerability",
+      "answer": "Asbel does not yet have specialized certifications in penetration testing or ethical hacking. However, his strong problem-solving mindset, attention to detail, and commitment to continuous learning make him well-positioned to develop cybersecurity skills. He has already demonstrated his ability to learn complex topics quickly through his 13+ certifications."
+    },
+    {
+      "id": "cyber-tools-1",
+      "category": "cybersecurity",
+      "keywords": ["wireshark", "nmap", "metasploit", "burp suite"],
+      "question": "wireshark|nmap|metasploit|burp suite",
+      "answer": "Asbel is aware of common cybersecurity tools like Wireshark, Nmap, Metasploit, and Burp Suite through his IT studies. While he hasn't used these extensively in production environments, he understands their purpose in network analysis and security testing."
+    },
+    {
+      "id": "devops-1",
+      "category": "devops",
+      "keywords": ["devops", "ci cd", "continuous integration", "continuous deployment", "jenkins"],
+      "question": "devops|ci cd|continuous integration|continuous deployment|jenkins",
+      "answer": "Asbel has foundational awareness of DevOps concepts including CI/CD pipelines. Through his Git and GitHub coursework, he has learned about version control workflows and collaboration practices. He is eager to expand his knowledge of DevOps tools and practices."
+    },
+    {
+      "id": "databases-1",
+      "category": "databases",
+      "keywords": ["database", "sql", "mysql", "postgresql", "mongodb", "nosql"],
+      "question": "database|sql|mysql|postgresql|mongodb|nosql",
+      "answer": "Asbel has basic awareness of database concepts through his web development studies. He understands the difference between SQL and NoSQL databases and has some experience with data management. He is eager to expand his database skills through practical experience."
+    },
+    {
+      "id": "agile-1",
+      "category": "methodology",
+      "keywords": ["agile", "scrum", "kanban", "sprint"],
+      "question": "agile|scrum|kanban|sprint",
+      "answer": "Asbel is familiar with Agile methodology concepts including Scrum and Kanban. He understands the importance of iterative development, sprint planning, and continuous improvement. He has applied collaborative practices in his team environments."
+    },
+    {
+      "id": "communication-1",
+      "category": "soft-skills",
+      "keywords": ["communication", "communication skills", "present", "presentation"],
+      "question": "communication|present|presentation",
+      "answer": "Asbel has strong communication skills developed through customer service and team-based roles. He is comfortable interacting with colleagues, customers, and management. He can present ideas clearly and is proficient in both written and verbal communication. His experience in customer-facing roles has honed his ability to explain technical concepts to non-technical audiences."
+    },
+    {
+      "id": "problem-solving-1",
+      "category": "soft-skills",
+      "keywords": ["problem solving", "problem solver", "critical thinking", "analytical"],
+      "question": "problem solving|problem solver|critical thinking|analytical",
+      "answer": "Asbel is a strong problem solver. His experience as a Quality Inspector required identifying issues and providing detailed resolutions. His IT support role involved troubleshooting technical problems systematically. He approaches challenges with analytical thinking and creative solutions."
+    },
+    {
+      "id": "leadership-1",
+      "category": "soft-skills",
+      "keywords": ["leadership", "lead", "manager", "supervisor"],
+      "question": "leadership|lead|manager|supervisor",
+      "answer": "While Asbel has not yet held formal leadership positions, he demonstrates leadership qualities through his initiative, reliability, and ability to work independently. He takes ownership of his tasks and is comfortable guiding others when needed. He is eager to develop his leadership skills in the right environment."
+    },
+    {
+      "id": "stress-1",
+      "category": "soft-skills",
+      "keywords": ["stress", "pressure", "deadline", "fast paced"],
+      "question": "stress|pressure|deadline|fast paced",
+      "answer": "Asbel thrives under pressure and in fast-paced environments. His experience as a Quality Inspector required maintaining accuracy while working quickly. He manages stress effectively through organization, prioritization, and a positive attitude. He sees deadlines as motivating challenges rather than obstacles."
+    },
+    {
+      "id": "work-ethic-1",
+      "category": "soft-skills",
+      "keywords": ["work ethic", "hardworking", "dedicated", "committed"],
+      "question": "work ethic|hardworking|dedicated|committed",
+      "answer": "Asbel is known for his strong work ethic. He is reliable, punctual, and consistently delivers quality results. His 13+ certifications earned while working demonstrate his commitment to professional growth. He approaches every task with dedication and takes pride in his work."
+    },
+    {
+      "id": "adaptability-1",
+      "category": "soft-skills",
+      "keywords": ["adapt", "adaptability", "flexible", "versatile"],
+      "question": "adapt|adaptability|flexible|versatile",
+      "answer": "Asbel is highly adaptable. He has successfully transitioned between multiple industries - from quality inspection to customer service to IT support to web development. He quickly learns new processes, tools, and environments. His versatility makes him valuable in dynamic workplaces."
+    },
+    {
+      "id": "english-advanced-1",
+      "category": "languages",
+      "keywords": ["english level", "english proficiency", "english fluency", "english ability"],
+      "question": "english level|english proficiency|english fluency|english ability",
+      "answer": "Asbel's English is at an intermediate level and improving daily through immersion in Dublin. He can communicate professionally in workplace settings and is committed to continuous improvement. His Portuguese is native-level, making him bilingual."
+    },
+    {
+      "id": "relocation-1",
+      "category": "availability",
+      "keywords": ["relocate", "relocation", "move", "moving to ireland"],
+      "question": "relocat|relocation|move|moving to ireland",
+      "answer": "Asbel has already relocated to Dublin, Ireland. He is locally based and available to work without any relocation assistance needed. He is familiar with the area and ready to start working immediately."
+    },
+    {
+      "id": "experience-detail-1",
+      "category": "experience",
+      "keywords": ["quality inspector", "quality inspection", "quality control"],
+      "question": "quality inspector|quality inspection|quality control",
+      "answer": "Asbel worked as a Quality Inspector in Brazil from July 2024 to present. His responsibilities included inspecting products to ensure compliance with company procedures in a fast-paced environment, demonstrating reliability and strong work ethic, collaborating with different teams, and maintaining clean and organized work areas while complying with strict procedures."
+    },
+    {
+      "id": "experience-detail-2",
+      "category": "experience",
+      "keywords": ["customer service", "customer support", "retail"],
+      "question": "customer service|customer support|retail",
+      "answer": "Asbel has extensive customer service experience. As a Customer Service Assistant in Brazil, he maintained excellent customer relationships, developed strong communication skills, and provided outstanding service. At Otica Prevent, he assisted customers by identifying issues and providing detailed resolutions. His customer-focused approach has been consistent across all his roles."
+    },
+    {
+      "id": "experience-detail-3",
+      "category": "experience",
+      "keywords": ["otica prevent", "optical", "optician"],
+      "question": "otica prevent|optical|optician",
+      "answer": "At Otica Prevent in Sao Vicente, Brazil (September 2023 - July 2024), Asbel assisted customers by identifying issues and providing detailed resolutions. He supported daily business activities and administrative tasks, maintained professionalism and received excellent customer feedback, and collaborated with team members to ensure efficient operations."
+    },
+    {
+      "id": "tech-stack-1",
+      "category": "tech-stack",
+      "keywords": ["tech stack", "technology stack", "what technologies"],
+      "question": "tech stack|technology stack|what technologies",
+      "answer": "Asbel's tech stack includes: Frontend: HTML, CSS, JavaScript, React basics. Tools: Git, GitHub, Figma, Microsoft Office. Concepts: Responsive Design, Version Control, UI/UX Basics. Learning: TypeScript, React, Node.js, Cloud (AWS). He applies these technologies in his personal projects, including his portfolio website."
+    },
+    {
+      "id": "cert-detail-1",
+      "category": "certifications",
+      "keywords": ["aws cloud foundations", "aws certification"],
+      "question": "aws cloud foundations|aws certification",
+      "answer": "Asbel has completed the AWS Cloud Foundations certification, which provides foundational knowledge of AWS cloud services, cloud architecture, security, and pricing models. This certification demonstrates his understanding of cloud computing fundamentals and readiness to work with AWS services."
+    },
+    {
+      "id": "cert-detail-2",
+      "category": "certifications",
+      "keywords": ["ux design", "user experience", "ux"],
+      "question": "ux design|user experience|ux",
+      "answer": "Asbel has completed the UX Design: Digital Products certification. This course covered user experience principles, design thinking, wireframing, prototyping, and user research. He applies these skills in his web development projects and uses Figma for design work."
+    },
+    {
+      "id": "cert-detail-3",
+      "category": "certifications",
+      "keywords": ["figma", "figma masterclass"],
+      "question": "figma|figma masterclass",
+      "answer": "Asbel has completed the Masterclass Figma certification. He is proficient in using Figma for UI/UX design, including creating wireframes, prototypes, and design systems. He uses Figma in his web development projects to plan and design user interfaces."
+    },
+    {
+      "id": "cert-detail-4",
+      "category": "certifications",
+      "keywords": ["java", "java certification", "java first application"],
+      "question": "java|java certification|java first application",
+      "answer": "Asbel has completed the 'Java - First Application' certification. This course covered Java programming fundamentals including variables, data types, control structures, and object-oriented programming concepts. He has foundational knowledge of Java development."
+    },
+    {
+      "id": "cert-detail-5",
+      "category": "certifications",
+      "keywords": ["git", "github", "version control"],
+      "question": "git|github|version control",
+      "answer": "Asbel has completed the 'Bootcamp - Git and GitHub Code Versioning' certification. He is proficient in using Git for version control and GitHub for code collaboration. He uses these tools in his personal projects for code management and collaboration."
+    },
+    {
+      "id": "cert-detail-6",
+      "category": "certifications",
+      "keywords": ["client server", "http", "api", "rest"],
+      "question": "client server|http|api|rest",
+      "answer": "Asbel has completed the 'Bootcamp - Client x Server Communication' certification. This course covered HTTP protocols, client-server architecture, RESTful APIs, and web communication fundamentals. He applies these concepts in his web development projects."
+    },
+    {
+      "id": "cert-detail-7",
+      "category": "certifications",
+      "keywords": ["prompt engineering", "ai", "artificial intelligence", "machine learning"],
+      "question": "prompt engineering|ai|artificial intelligence|machine learning",
+      "answer": "Asbel has completed the 'AWS - Foundations of Prompt Engineering' certification. He understands how to craft effective prompts for AI models and has foundational knowledge of AI concepts. He is also familiar with Amazon Bedrock for AI services."
+    },
+    {
+      "id": "cert-detail-8",
+      "category": "certifications",
+      "keywords": ["data analysis", "google sheets", "spreadsheet"],
+      "question": "data analysis|google sheets|spreadsheet",
+      "answer": "Asbel has completed the 'Data Analysis - Google Sheets' certification. He is proficient in using spreadsheets for data analysis, including formulas, charts, pivot tables, and data visualization. He applies these skills in administrative and analytical tasks."
+    },
+    {
+      "id": "cert-detail-9",
+      "category": "certifications",
+      "keywords": ["career transition", "career change", "it career"],
+      "question": "career transition|career change|it career",
+      "answer": "Asbel has completed the 'Career Transition to IT' certification. This course provided guidance on transitioning into the technology industry, including skill development, portfolio building, networking, and interview preparation. He is actively applying these principles in his career journey."
+    },
+    {
+      "id": "cert-detail-10",
+      "category": "certifications",
+      "keywords": ["programming basics", "getting started programming", "programming fundamentals"],
+      "question": "programming basics|getting started programming|programming fundamentals",
+      "answer": "Asbel has completed the 'Getting Started in Programming' certification. This course covered programming fundamentals including variables, data types, control structures, functions, and basic algorithms. He applies these concepts in his web development work."
+    },
+    {
+      "id": "cert-detail-11",
+      "category": "certifications",
+      "keywords": ["front-end development", "frontend development", "html css"],
+      "question": "front-end development|frontend development|html css",
+      "answer": "Asbel has completed the 'Introduction to Front-End Development' certification. This course covered HTML, CSS, JavaScript, responsive design, and modern front-end development practices. He applies these skills in his personal projects, including his portfolio website."
+    },
+    {
+      "id": "cert-detail-12",
+      "category": "certifications",
+      "keywords": ["administrative assistant", "admin", "office admin"],
+      "question": "administrative assistant|admin|office admin",
+      "answer": "Asbel has completed the 'Administrative Assistant' certification. This course covered office administration skills including scheduling, communication, documentation, and organizational skills. He applies these skills in his professional roles."
+    },
+    {
+      "id": "cert-detail-13",
+      "category": "certifications",
+      "keywords": ["bedrock", "amazon bedrock"],
+      "question": "bedrock|amazon bedrock",
+      "answer": "Asbel is familiar with Amazon Bedrock, which is AWS's fully managed service for building generative AI applications. Through his AWS certifications, he has learned about AI/ML services and how to leverage cloud-based AI capabilities."
+    },
+    {
+      "id": "future-goals-1",
+      "category": "career-goals",
+      "keywords": ["future", "goals", "where do you see", "career plan", "5 years"],
+      "question": "future|goals|where do you see|career plan|5 years",
+      "answer": "Asbel's career goal is to find opportunities in Ireland where he can apply his diverse experience, strong work ethic, and growing technical skills to contribute to a motivated team. He envisions growing his technical expertise while contributing to meaningful projects. He is committed to continuous learning and professional development."
+    },
+    {
+      "id": "learning-1",
+      "category": "learning",
+      "keywords": ["learning", "studying", "course", "training", "education"],
+      "question": "learning|studying|course|training|education",
+      "answer": "Asbel is committed to continuous learning. He is currently learning TypeScript, React, Node.js, and Cloud (AWS) technologies. He has earned 13 professional certifications across cloud technologies, design, programming, and professional skills. He builds personal projects to apply what he learns."
+    },
+    {
+      "id": "feedback-1",
+      "category": "soft-skills",
+      "keywords": ["feedback", "constructive", "receiving feedback"],
+      "question": "feedback|constructive|receiving feedback",
+      "answer": "Asbel values constructive feedback as an opportunity for growth. He actively seeks feedback from colleagues and managers to improve his performance. His adaptability and growth mindset make him receptive to suggestions and committed to implementing improvements."
+    },
+    {
+      "id": "time-management-1",
+      "category": "soft-skills",
+      "keywords": ["time management", "organization", "organized", "prioritize"],
+      "question": "time management|organization|organized|prioritize",
+      "answer": "Asbel excels at time management and organization. His experience as a Quality Inspector required maintaining accuracy while working quickly in fast-paced environments. He prioritizes tasks effectively and maintains organized work areas. His ability to manage multiple responsibilities demonstrates strong organizational skills."
+    },
+    {
+      "id": "physical-1",
+      "category": "physical",
+      "keywords": ["physical", "fit", "standing", "lifting", "manual"],
+      "question": "physical|fit|standing|lifting|manual",
+      "answer": "Asbel is physically fit and capable of performing manual tasks. He is comfortable standing for long periods, lifting heavy items, and working in physically demanding environments. His experience in quality inspection and warehouse operations has prepared him for roles requiring physical stamina."
+    },
+    {
+      "id": "relocation-detail-1",
+      "category": "availability",
+      "keywords": ["dublin", "ireland", "搬到爱尔兰", "搬到都柏林"],
+      "question": "dublin|ireland|搬到爱尔兰|搬到都柏林",
+      "answer": "Asbel has already relocated to Dublin, Ireland. He is locally based and familiar with the area. He is available to work without any relocation assistance needed and can start immediately."
+    },
+    {
+      "id": "work-style-1",
+      "category": "work-style",
+      "keywords": ["work style", "how does he work", "working style", "approach"],
+      "question": "work style|how does he work|working style|approach",
+      "answer": "Asbel's work style is characterized by reliability, attention to detail, and a positive attitude. He thrives in fast-paced environments, collaborates effectively with teams, and maintains high standards even under pressure. He is proactive in learning new skills and adapting to new processes."
+    },
+    {
+      "id": "challenges-1",
+      "category": "soft-skills",
+      "keywords": ["challenge", "difficult", "overcome", "obstacle"],
+      "question": "challenge|difficult|overcome|obstacle",
+      "answer": "Asbel approaches challenges with a problem-solving mindset. He has successfully transitioned between industries, each time quickly learning new processes and delivering results. He sees obstacles as opportunities to learn and grow, and his adaptability allows him to navigate uncertainty effectively."
+    },
+    {
+      "id": "innovation-1",
+      "category": "soft-skills",
+      "keywords": ["innovate", "innovation", "creative", "creativity", "new ideas"],
+      "question": "innovat|innovation|creative|creativity|new ideas",
+      "answer": "Asbel demonstrates innovation through his personal projects and continuous learning approach. He built a professional portfolio website from scratch using modern technologies, showing creative problem-solving and technical curiosity. He is always looking for better ways to approach tasks and improve processes."
+    },
+    {
+      "id": "conflict-1",
+      "category": "soft-skills",
+      "keywords": ["conflict", "disagree", "argument", "resolution"],
+      "question": "conflict|disagree|argument|resolution",
+      "answer": "Asbel handles conflicts professionally through open communication and collaboration. He listens to different perspectives, seeks mutually beneficial solutions, and maintains positive working relationships. His customer service experience has taught him how to manage difficult situations with tact and professionalism."
+    },
+    {
+      "id": "detail-oriented-1",
+      "category": "soft-skills",
+      "keywords": ["detail", "detail oriented", "attention to detail", "precise"],
+      "question": "detail|detail oriented|attention to detail|precise",
+      "answer": "Asbel is highly detail-oriented. His experience as a Quality Inspector required meticulous attention to detail to ensure product compliance. He maintains accurate documentation, follows strict procedures, and takes pride in delivering quality work. This attention to detail extends to all aspects of his professional work."
+    },
+    {
+      "id": "customer-focus-1",
+      "category": "soft-skills",
+      "keywords": ["customer focus", "customer satisfaction", "customer oriented"],
+      "question": "customer focus|customer satisfaction|customer oriented",
+      "answer": "Asbel is customer-focused in all his interactions. His customer service experience has taught him to prioritize customer satisfaction, maintain positive relationships, and provide outstanding service. He consistently receives excellent customer feedback and strives to exceed expectations."
+    },
+    {
+      "id": "self-motivated-1",
+      "category": "soft-skills",
+      "keywords": ["self motivated", "self-starter", "independent", "initiative"],
+      "question": "self motivated|self-starter|independent|initiative",
+      "answer": "Asbel is a self-motivated individual who takes initiative. He has independently earned 13+ certifications, built personal projects, and continuously improves his skills. He doesn't wait to be told what to do - he identifies opportunities for growth and takes action."
+    },
+    {
+      "id": "quick-learner-1",
+      "category": "soft-skills",
+      "keywords": ["quick learner", "fast learner", "learn quickly", "adapt quickly"],
+      "question": "quick learner|fast learner|learn quickly|adapt quickly",
+      "answer": "Asbel is a fast learner who quickly adapts to new environments and processes. He has demonstrated this ability by successfully transitioning between industries and earning 13+ certifications while working. He learns through hands-on practice, certification courses, and personal projects."
+    },
+    {
+      "id": "positive-attitude-1",
+      "category": "soft-skills",
+      "keywords": ["positive attitude", "optimistic", "enthusiastic", "enthusiasm"],
+      "question": "positive attitude|optimistic|enthusiastic|enthusiasm",
+      "answer": "Asbel brings a positive attitude and genuine enthusiasm to every role. His colleagues and managers appreciate his upbeat approach and willingness to support others. He sees challenges as opportunities and maintains motivation even in demanding situations."
+    },
+    {
+      "id": "reliability-1",
+      "category": "soft-skills",
+      "keywords": ["reliable", "reliability", "dependable", "trustworthy", "punctual"],
+      "question": "reliable|reliability|dependable|trustworthy|punctual",
+      "answer": "Asbel is known for his reliability and dependability. He is punctual, meets deadlines, and consistently delivers quality work. His managers have praised his strong work ethic and ability to be counted on. He takes his responsibilities seriously and follows through on commitments."
+    },
+    {
+      "id": "technical-problem-solving-1",
+      "category": "technical",
+      "keywords": ["technical problem", "troubleshooting", "debug", "fix"],
+      "question": "technical problem|troubleshooting|debug|fix",
+      "answer": "Asbel has strong technical troubleshooting skills. His IT support experience involved investigating technical issues, following detailed procedures, and providing customer-focused solutions. He applies systematic approaches to identify and resolve problems efficiently."
+    },
+    {
+      "id": "web-development-1",
+      "category": "technical",
+      "keywords": ["web development", "web app", "web application", "website"],
+      "question": "web development|web app|web application|website",
+      "answer": "Asbel is building his web development skills through personal projects. He has completed courses in HTML, CSS, JavaScript, and front-end development. He built his portfolio website using React, TypeScript, Tailwind CSS, and Express - demonstrating practical full-stack ability."
+    },
+    {
+      "id": "react-1",
+      "category": "technical",
+      "keywords": ["react", "react js", "reactjs", "react development"],
+      "question": "react|react js|reactjs|react development",
+      "answer": "Asbel is learning React and has applied it in his portfolio website project. He understands React components, hooks, state management, and JSX. He is actively expanding his React skills through practice and continuous learning."
+    },
+    {
+      "id": "typescript-1",
+      "category": "technical",
+      "keywords": ["typescript", "ts", "type script"],
+      "question": "typescript|ts|type script",
+      "answer": "Asbel is learning TypeScript and has used it in his portfolio website project. He understands type annotations, interfaces, and how TypeScript improves code quality and maintainability. He is actively expanding his TypeScript skills."
+    },
+    {
+      "id": "nodejs-1",
+      "category": "technical",
+      "keywords": ["node", "nodejs", "node js", "express", "backend", "back-end"],
+      "question": "node|nodejs|node js|express|backend|back-end",
+      "answer": "Asbel is learning Node.js and has used Express in his portfolio website backend. He understands server-side JavaScript, API development, and basic backend architecture. He is expanding his backend development skills through practice and courses."
+    },
+    {
+      "id": "css-1",
+      "category": "technical",
+      "keywords": ["css", "tailwind", "styling", "responsive design"],
+      "question": "css|tailwind|styling|responsive design",
+      "answer": "Asbel has strong CSS skills and is proficient in Tailwind CSS. He understands responsive design principles, CSS frameworks, and modern styling techniques. He applies these skills in his web development projects to create visually appealing and responsive interfaces."
+    },
+    {
+      "id": "html-1",
+      "category": "technical",
+      "keywords": ["html", "semantic html", "markup"],
+      "question": "html|semantic html|markup",
+      "answer": "Asbel has strong HTML skills, including semantic HTML5 markup. He understands document structure, accessibility basics, and modern HTML practices. He applies these skills as a foundation for his web development projects."
+    },
+    {
+      "id": "networking-1",
+      "category": "technical",
+      "keywords": ["networking", "network", "tcp", "ip", "dns", "http"],
+      "question": "networking|network|tcp|ip|dns|http",
+      "answer": "Asbel has foundational networking knowledge from his IT support experience and coursework. He understands basic networking concepts including TCP/IP, DNS, HTTP, and network troubleshooting. This knowledge supports his IT support and web development work."
+    },
+    {
+      "id": "hardware-1",
+      "category": "technical",
+      "keywords": ["hardware", "computer", "pc", "printer", "device"],
+      "question": "hardware|computer|pc|printer|device",
+      "answer": "Asbel has hardware troubleshooting skills from his IT support experience. He can diagnose and resolve hardware issues, set up devices, and perform basic maintenance. His technical knowledge extends to computer components, peripherals, and device configuration."
+    },
+    {
+      "id": "microsoft-office-1",
+      "category": "technical",
+      "keywords": ["microsoft office", "excel", "word", "powerpoint", "outlook"],
+      "question": "microsoft office|excel|word|powerpoint|outlook",
+      "answer": "Asbel is proficient in Microsoft Office Suite including Excel, Word, PowerPoint, and Outlook. He uses these tools for documentation, data analysis, presentations, and communication. His administrative skills include advanced Excel functions and data organization."
+    },
+    {
+      "id": "version-control-1",
+      "category": "technical",
+      "keywords": ["version control", "git flow", "branching", "merge"],
+      "question": "version control|git flow|branching|merge",
+      "answer": "Asbel is proficient in version control using Git and GitHub. He understands branching strategies, merge conflicts, pull requests, and collaborative workflows. He applies these skills in his personal projects for code management and collaboration."
+    },
+    {
+      "id": "testing-1",
+      "category": "technical",
+      "keywords": ["testing", "unit test", "integration test", "test driven"],
+      "question": "testing|unit test|integration test|test driven",
+      "answer": "Asbel has foundational awareness of testing concepts including unit testing and test-driven development. He understands the importance of writing tests to ensure code quality and reliability. He is eager to expand his testing skills through practical experience."
+    },
+    {
+      "id": "security-best-practices-1",
+      "category": "security",
+      "keywords": ["security best practices", "secure coding", "owasp", "xss", "sql injection"],
+      "question": "security best practices|secure coding|owasp|xss|sql injection",
+      "answer": "Asbel has foundational awareness of security best practices through his IT support experience and web development studies. He understands common vulnerabilities like XSS and SQL injection and follows secure coding practices. He is committed to writing secure and reliable code."
+    },
+    {
+      "id": "performance-1",
+      "category": "technical",
+      "keywords": ["performance", "optimization", "optimise", "optimize", "speed"],
+      "question": "performance|optimization|optimise|optimize|speed",
+      "answer": "Asbel understands the importance of performance optimization in web development. He applies best practices like code splitting, lazy loading, and efficient resource management. He is expanding his knowledge of performance monitoring and optimization techniques."
+    },
+    {
+      "id": "accessibility-1",
+      "category": "technical",
+      "keywords": ["accessibility", "a11y", "wcag", "screen reader", "aria"],
+      "question": "accessibility|a11y|wcag|screen reader|aria",
+      "answer": "Asbel has foundational awareness of web accessibility principles including WCAG guidelines and ARIA attributes. He understands the importance of creating inclusive web experiences and applies basic accessibility practices in his development work."
+    },
+    {
+      "id": "seo-1",
+      "category": "technical",
+      "keywords": ["seo", "search engine optimization", "meta tags", "keywords"],
+      "question": "seo|search engine optimization|meta tags|keywords",
+      "answer": "Asbel has basic knowledge of SEO principles including meta tags, semantic HTML, and content structure. He applies these practices in his web projects to improve search engine visibility and user experience."
+    },
+    {
+      "id": "mobile-1",
+      "category": "technical",
+      "keywords": ["mobile", "responsive", "mobile first", "mobile development"],
+      "question": "mobile|responsive|mobile first|mobile development",
+      "answer": "Asbel understands responsive design and mobile-first development principles. He creates web interfaces that work across different screen sizes and devices. He applies CSS media queries and flexible layouts to ensure optimal user experience on mobile, tablet, and desktop."
+    },
+    {
+      "id": "api-development-1",
+      "category": "technical",
+      "keywords": ["api", "rest api", "restful", "endpoint", "json"],
+      "question": "api|rest api|restful|endpoint|json",
+      "answer": "Asbel has foundational knowledge of API development through his 'Client x Server Communication' certification. He understands RESTful APIs, HTTP methods, JSON data format, and client-server communication. He applies these concepts in his web development projects."
+    },
+    {
+      "id": "cicd-1",
+      "category": "devops",
+      "keywords": ["ci/cd", "continuous integration", "continuous delivery", "pipeline", "github actions"],
+      "question": "ci/cd|continuous integration|continuous delivery|pipeline|github actions",
+      "answer": "Asbel has foundational awareness of CI/CD concepts through his Git and GitHub coursework. He understands the importance of automated testing and deployment pipelines. He is eager to learn more about CI/CD tools and practices."
+    },
+    {
+      "id": "cloud-services-1",
+      "category": "cloud",
+      "keywords": ["cloud services", "aws services", "ec2", "s3", "lambda", "cloudfront"],
+      "question": "cloud services|aws services|ec2|s3|lambda|cloudfront",
+      "answer": "Asbel has foundational knowledge of AWS services through his AWS Cloud Foundations certification. He understands core services like EC2, S3, Lambda, and CloudFront. He is expanding his cloud skills through continuous learning and practical projects."
+    },
+    {
+      "id": "containerization-1",
+      "category": "devops",
+      "keywords": ["docker", "container", "kubernetes", "k8s", "containerization"],
+      "question": "docker|container|kubernetes|k8s|containerization",
+      "answer": "Asbel has basic awareness of containerization concepts including Docker and Kubernetes. While he hasn't used these extensively in production, he understands their purpose in application deployment and scaling. He is eager to learn more about container technologies."
+    },
+    {
+      "id": "monitoring-1",
+      "category": "devops",
+      "keywords": ["monitoring", "logging", "observability", "alerts", "dashboard"],
+      "question": "monitoring|logging|observability|alerts|dashboard",
+      "answer": "Asbel has foundational awareness of monitoring and observability concepts. He understands the importance of logging, metrics, and alerts for maintaining application health. He is eager to learn more about monitoring tools and practices."
+    },
+    {
+      "id": "database-operations-1",
+      "category": "databases",
+      "keywords": ["crud", "database operations", "query", "insert", "update", "delete"],
+      "question": "crud|database operations|query|insert|update|delete",
+      "answer": "Asbel has foundational knowledge of database operations including CRUD (Create, Read, Update, Delete) operations. He understands basic SQL queries and database management concepts. He is expanding his database skills through practical experience."
+    },
+    {
+      "id": "data-modeling-1",
+      "category": "databases",
+      "keywords": ["data model", "schema", "er diagram", "normalization"],
+      "question": "data model|schema|er diagram|normalization",
+      "answer": "Asbel has basic awareness of data modeling concepts including schemas, ER diagrams, and normalization. He understands how to structure data efficiently and is expanding his database design skills."
+    },
+    {
+      "id": "cloud-deployment-1",
+      "category": "cloud",
+      "keywords": ["deploy", "deployment", "hosting", "host", "aws deployment"],
+      "question": "deploy|deployment|hosting|host|aws deployment",
+      "answer": "Asbel has foundational knowledge of cloud deployment concepts through his AWS certifications. He understands the basics of deploying applications to cloud services. He is eager to gain more hands-on experience with cloud deployment workflows."
+    },
+    {
+      "id": "security-tools-1",
+      "category": "security",
+      "keywords": ["security tools", "firewall", "antivirus", "encryption"],
+      "question": "security tools|firewall|antivirus|encryption",
+      "answer": "Asbel has basic awareness of security tools including firewalls, antivirus software, and encryption. His IT support experience has given him practical knowledge of maintaining system security and following security procedures."
+    },
+    {
+      "id": "incident-response-1",
+      "category": "security",
+      "keywords": ["incident response", "security incident", "breach", "compromise"],
+      "question": "incident response|security incident|breach|compromise",
+      "answer": "Asbel has foundational awareness of incident response concepts through his IT support experience. He understands the importance of identifying, reporting, and responding to security incidents. He follows established procedures for handling security issues."
+    },
+    {
+      "id": "compliance-1",
+      "category": "security",
+      "keywords": ["compliance", "gdpr", "regulation", "policy"],
+      "question": "compliance|gdpr|regulation|policy",
+      "answer": "Asbel has basic awareness of compliance concepts including GDPR and data protection regulations. He understands the importance of following organizational policies and regulatory requirements. He is committed to maintaining compliance in his professional work."
+    },
+    {
+      "id": "risk-assessment-1",
+      "category": "security",
+      "keywords": ["risk assessment", "risk management", "vulnerability assessment"],
+      "question": "risk assessment|risk management|vulnerability assessment",
+      "answer": "Asbel has foundational awareness of risk assessment concepts. He understands the importance of identifying and mitigating security risks. He is eager to learn more about formal risk assessment methodologies and security frameworks."
+    },
+    {
+      "id": "project-management-1",
+      "category": "methodology",
+      "keywords": ["project management", "project plan", "timeline", "milestone"],
+      "question": "project management|project plan|timeline|milestone",
+      "answer": "Asbel has basic project management awareness through his personal projects and work experience. He understands planning, prioritization, and meeting deadlines. He applies organizational skills to manage his tasks and projects effectively."
+    },
+    {
+      "id": "documentation-1",
+      "category": "technical",
+      "keywords": ["documentation", "technical writing", "readme", "docs"],
+      "question": "documentation|technical writing|readme|docs",
+      "answer": "Asbel values good documentation and practices it in his projects. He creates README files, documents his code, and maintains clear technical documentation. His attention to detail ensures his documentation is accurate and useful."
+    },
+    {
+      "id": "code-review-1",
+      "category": "methodology",
+      "keywords": ["code review", "peer review", "pull request review"],
+      "question": "code review|peer review|pull request review",
+      "answer": "Asbel understands the importance of code reviews for maintaining code quality. He is familiar with pull request workflows on GitHub and is open to both giving and receiving constructive feedback on code."
+    },
+    {
+      "id": "pair-programming-1",
+      "category": "methodology",
+      "keywords": ["pair programming", "collaborative coding", "programming together"],
+      "question": "pair programming|collaborative coding|programming together",
+      "answer": "Asbel is open to pair programming and collaborative coding. He believes in the value of shared knowledge and learning from others. His teamwork skills make him a good partner for collaborative development sessions."
+    },
+    {
+      "id": "technical-debt-1",
+      "category": "methodology",
+      "keywords": ["technical debt", "refactor", "code quality", "clean code"],
+      "question": "technical debt|refactor|code quality|clean code",
+      "answer": "Asbel understands the concept of technical debt and the importance of writing clean, maintainable code. He applies best practices in his personal projects and is committed to continuous improvement in code quality."
+    },
+    {
+      "id": "agile-scrum-1",
+      "category": "methodology",
+      "keywords": ["scrum master", "product owner", "sprint planning", "retrospective"],
+      "question": "scrum master|product owner|sprint planning|retrospective",
+      "answer": "Asbel has basic awareness of Scrum roles and ceremonies including sprint planning, daily standups, and retrospectives. He understands the Agile framework and is eager to participate in Scrum teams."
+    },
+    {
+      "id": "kanban-1",
+      "category": "methodology",
+      "keywords": ["kanban board", "kanban", "task board", "workflow"],
+      "question": "kanban board|kanban|task board|workflow",
+      "answer": "Asbel is familiar with Kanban methodology and task boards. He understands visual workflow management and work-in-progress limits. He uses organizational tools to manage his tasks and track progress."
+    },
+    {
+      "id": "ux-design-process-1",
+      "category": "design",
+      "keywords": ["ux design process", "user research", "wireframe", "prototype", "usability"],
+      "question": "ux design process|user research|wireframe|prototype|usability",
+      "answer": "Asbel has knowledge of UX design processes through his UX Design certification. He understands user research, wireframing, prototyping, and usability testing. He applies these principles in his web development projects to create user-centered designs."
+    },
+    {
+      "id": "ui-design-1",
+      "category": "design",
+      "keywords": ["ui design", "user interface", "visual design", "color theory"],
+      "question": "ui design|user interface|visual design|color theory",
+      "answer": "Asbel has foundational UI design knowledge through his Figma and UX Design certifications. He understands visual design principles, color theory, typography, and layout. He uses Figma to create visually appealing interfaces."
+    },
+    {
+      "id": "figma-design-1",
+      "category": "design",
+      "keywords": ["figma design", "figma prototype", "figma components", "design system"],
+      "question": "figma design|figma prototype|figma components|design system",
+      "answer": "Asbel is proficient in Figma for design work. He can create prototypes, design components, and build basic design systems. He uses Figma in his web development projects to plan and design user interfaces."
+    },
+    {
+      "id": "soft-skills-summary-1",
+      "category": "soft-skills",
+      "keywords": ["soft skills", "interpersonal", "people skills"],
+      "question": "soft skills|interpersonal|people skills",
+      "answer": "Asbel has strong soft skills including: Communication, Teamwork, Problem Solving, Adaptability, Time Management, Customer Service, Attention to Detail, Positive Attitude, Reliability, and Work Ethic. These skills have been developed through his diverse work experience and continuous self-improvement."
+    },
+    {
+      "id": "hard-skills-summary-1",
+      "category": "technical",
+      "keywords": ["hard skills", "technical skills summary", "tech skills"],
+      "question": "hard skills|technical skills summary|tech skills",
+      "answer": "Asbel's hard skills include: HTML, CSS, JavaScript, React basics, TypeScript (learning), Git & GitHub, Figma, Microsoft Office, Hardware Troubleshooting, Networking Basics, Responsive Design, Version Control, UI/UX Basics. He is actively learning Node.js, TypeScript, React, and Cloud (AWS) technologies."
+    },
+    {
+      "id": "career-transition-1",
+      "category": "career-goals",
+      "keywords": ["career transition", "career change", "transitioning", "changing careers"],
+      "question": "career transition|career change|transitioning|changing careers",
+      "answer": "Asbel is actively transitioning his career towards technology. He has completed 13+ certifications, built personal projects, and is continuously learning new technical skills. His diverse background gives him unique perspectives and transferable skills that complement his technical growth."
+    },
+    {
+      "id": "passion-technology-1",
+      "category": "motivation",
+      "keywords": ["passion for technology", "love technology", "interested in tech", "tech enthusiast"],
+      "question": "passion for technology|love technology|interested in tech|tech enthusiast",
+      "answer": "Asbel is genuinely passionate about technology. He enjoys exploring new tools, learning programming concepts, and building projects. His enthusiasm drives him to continuously improve his skills and stay current with technology trends."
+    },
+    {
+      "id": "growth-mindset-1",
+      "category": "motivation",
+      "keywords": ["growth mindset", "continuous improvement", "self-improvement", "always learning"],
+      "question": "growth mindset|continuous improvement|self-improvement|always learning",
+      "answer": "Asbel embodies a growth mindset. He believes in continuous improvement and actively seeks opportunities to learn and develop. His 13+ certifications earned while working demonstrate his commitment to professional growth. He approaches every experience as a chance to learn something new."
+    },
+    {
+      "id": "contact-1",
+      "category": "contact",
+      "keywords": ["contact", "email", "phone", "reach out", "get in touch"],
+      "question": "contact|email|phone|reach out|get in touch",
+      "answer": "You can reach Asbel at: Email: asbel.nascimento123456@gmail.com, LinkedIn: linkedin.com/in/asbelnascimento, Website: https://asbeldev.com. He would be happy to discuss opportunities or answer any additional questions."
+    },
+    {
+      "id": "linkedin-1",
+      "category": "contact",
+      "keywords": ["linkedin", "linkedin profile", "professional network"],
+      "question": "linkedin|linkedin profile|professional network",
+      "answer": "You can connect with Asbel on LinkedIn: linkedin.com/in/asbelnascimento. His LinkedIn profile provides additional details about his experience, certifications, and professional journey."
+    },
+    {
+      "id": "website-1",
+      "category": "contact",
+      "keywords": ["website", "personal website", "portfolio site", "asbeldev"],
+      "question": "website|personal website|portfolio site|asbeldev",
+      "answer": "Asbel's portfolio website is available at https://asbeldev.com. The website showcases his projects, skills, and experience, and includes this AI career assistant to help recruiters learn about his background."
+    },
+    {
+      "id": "thankyou-1",
+      "category": "closing",
+      "keywords": ["thank you", "thanks a lot", "really helpful", "great info"],
+      "question": "thank you|thanks a lot|really helpful|great info",
+      "answer": "You're welcome! I'm glad I could help you learn about Asbel's background. If you have any more questions or would like to discuss potential opportunities, feel free to reach out anytime. You can contact him at asbel.nascimento123456@gmail.com or via LinkedIn: linkedin.com/in/asbelnascimento"
+    },
+    {
+      "id": "help-1",
+      "category": "meta",
+      "keywords": ["help", "what can you do", "what do you know", "how does this work"],
+      "question": "help|what can you do|what do you know|how does this work",
+      "answer": "I'm Asbel Nascimento's AI career assistant. I can tell you about: His experience and work history, Technical skills and certifications, Projects and portfolio, Soft skills and strengths, Availability and logistics, Specific role fit (warehouse, kitchen porter, housekeeper, IT support, barista). Feel free to ask me anything specific, or use the quick buttons below for common questions!"
+    },
+    {
+      "id": "unclear-1",
+      "category": "meta",
+      "keywords": ["unclear", "don't understand", "not sure", "can you explain"],
+      "question": "unclear|don't understand|not sure|can you explain",
+      "answer": "I want to make sure I give you the most helpful information. Could you rephrase your question or be more specific about what you'd like to know about Asbel? I can help with his experience, skills, certifications, projects, availability, and more."
+    }
+  ]
+}
