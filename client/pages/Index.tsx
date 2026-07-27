@@ -1,6 +1,7 @@
 import { PositionCard } from "@/components/PositionCard";
 import { SkillBadge } from "@/components/SkillBadge";
 import { ShaderBackground } from "@/components/ui/ass";
+import { Typewriter } from "@/components/ui/typewriter-text";
 import { positions } from "@shared/positions";
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, ArrowRight, FileText } from "lucide-react";
@@ -37,18 +38,20 @@ export default function Index() {
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
             {/* Left Column */}
             <div className="flex-1 text-center md:text-left">
-              <p className="text-muted-foreground text-sm font-medium tracking-wide uppercase mb-4">
+              <p className="text-muted-foreground text-sm font-medium tracking-wide uppercase mb-4 fade-in-up">
                 Hello, I'm
               </p>
-              <h1 className="text-5xl md:text-6xl lg:text-[64px] font-bold font-display leading-[1.1] mb-6">
+              <h1 className="text-5xl md:text-6xl lg:text-[64px] font-bold font-display leading-[1.1] mb-6 fade-in-up fade-in-up-delay-1">
                 <span className="text-primary">ASBEL</span>
               </h1>
-              <p className="text-lg text-secondary-text leading-relaxed mb-8 max-w-lg">
-                Thank you for taking the time to review my application. Please
-                select the position I applied for to view a version of my resume
-                tailored specifically for that role.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <div className="text-lg text-secondary-text leading-relaxed mb-8 max-w-lg fade-in-up fade-in-up-delay-2">
+                <Typewriter
+                  text="Thank you for taking the time to review my application. Please select the position I applied for to view a version of my resume tailored specifically for that role."
+                  speed={30}
+                  cursor=""
+                />
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start fade-in-up fade-in-up-delay-3">
                 <a
                   href="#positions"
                   className="btn-primary"
@@ -73,7 +76,7 @@ export default function Index() {
             </div>
 
             {/* Right Column */}
-            <div className="flex-shrink-0 flex flex-col items-center gap-6">
+            <div className="flex-shrink-0 flex flex-col items-center gap-6 fade-in-up fade-in-up-delay-2">
               <div className="relative w-40 h-40 md:w-52 md:h-52">
                 <div className="absolute inset-0 rounded-full animate-pulse-ring" />
                 <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/40">
@@ -108,14 +111,14 @@ export default function Index() {
       {/* Position Selection */}
       <section id="positions" className="section-spacing border-t border-border/50">
         <div className="container-main">
-          <h2 className="text-[28px] font-bold font-display text-center mb-3">
+          <h2 className="text-[28px] font-bold font-display text-center mb-3 fade-in-up">
             Select a Position
           </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-md mx-auto">
+          <p className="text-center text-muted-foreground mb-12 max-w-md mx-auto fade-in-up fade-in-up-delay-1">
             Choose the role you'd like to review. Each version is tailored
             specifically for that position.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 fade-in-up fade-in-up-delay-2">
             {positions.map((position) => (
               <PositionCard
                 key={position.id}
@@ -133,11 +136,11 @@ export default function Index() {
       <section className="section-spacing border-t border-border/50">
         <div className="container-main">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-[28px] font-bold font-display mb-3">
+            <h2 className="text-[28px] font-bold font-display mb-3 fade-in-up">
               About Me
             </h2>
-            <div className="h-[2px] w-10 bg-primary rounded-full mb-8" />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="h-[2px] w-10 bg-primary rounded-full mb-8 fade-in-up fade-in-up-delay-1" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in-up fade-in-up-delay-2">
               <div>
                 <p className="text-secondary-text leading-relaxed">
                   Motivated professional relocating to Ireland with experience
@@ -160,11 +163,11 @@ export default function Index() {
       {/* Skills */}
       <section className="section-spacing border-t border-border/50">
         <div className="container-main">
-          <h2 className="text-[28px] font-bold font-display mb-3">
+          <h2 className="text-[28px] font-bold font-display mb-3 fade-in-up">
             Skills
           </h2>
-          <div className="h-[2px] w-10 bg-primary rounded-full mb-8" />
-          <div className="flex flex-wrap gap-3">
+          <div className="h-[2px] w-10 bg-primary rounded-full mb-8 fade-in-up fade-in-up-delay-1" />
+          <div className="flex flex-wrap gap-3 fade-in-up fade-in-up-delay-2">
             {allSkills.map((skill) => (
               <SkillBadge key={skill} skill={skill} />
             ))}
@@ -175,11 +178,11 @@ export default function Index() {
       {/* Certifications */}
       <section className="section-spacing border-t border-border/50">
         <div className="container-main">
-          <h2 className="text-[28px] font-bold font-display mb-3">
+          <h2 className="text-[28px] font-bold font-display mb-3 fade-in-up">
             Certifications
           </h2>
-          <div className="h-[2px] w-10 bg-primary rounded-full mb-8" />
-          <div className="space-y-4">
+          <div className="h-[2px] w-10 bg-primary rounded-full mb-8 fade-in-up fade-in-up-delay-1" />
+          <div className="space-y-4 fade-in-up fade-in-up-delay-2">
             {[
               {
                 title: "Criminal Background Check Certificate",
@@ -218,17 +221,17 @@ export default function Index() {
       {/* Footer */}
       <footer className="section-spacing border-t border-border/50">
         <div className="container-main text-center">
-          <p className="text-secondary-text text-lg mb-6">
+          <p className="text-secondary-text text-lg mb-6 fade-in-up">
             Interested in working together?
           </p>
           <a
             href="mailto:asbel.nascimento123456@gmail.com"
-            className="btn-primary mb-10"
+            className="btn-primary mb-10 fade-in-up fade-in-up-delay-1"
           >
             Get in Touch
             <Mail size={16} />
           </a>
-          <div className="flex items-center justify-center gap-6 mb-8">
+          <div className="flex items-center justify-center gap-6 mb-8 fade-in-up fade-in-up-delay-2">
             <a
               href="https://www.linkedin.com/in/asbelnascimento/"
               target="_blank"
