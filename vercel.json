@@ -1,0 +1,11 @@
+{
+  "buildCommand": "pnpm run build:client",
+  "outputDirectory": "dist/spa",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/((?!assets/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
