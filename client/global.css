@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 173 25% 8%;
+    --background: 270 30% 6%;
     --foreground: 0 0% 100%;
 
-    --card: 173 30% 11%;
+    --card: 270 25% 10%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 173 30% 11%;
+    --popover: 270 25% 10%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 170 51% 36%;
+    --primary: 270 80% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 170 40% 40%;
+    --secondary: 178 60% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 173 20% 14%;
-    --muted-foreground: 173 8% 60%;
+    --muted: 270 20% 14%;
+    --muted-foreground: 270 8% 60%;
 
-    --accent: 170 51% 36%;
+    --accent: 270 80% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 173 15% 12%;
-    --input: 173 15% 12%;
-    --ring: 170 51% 36%;
+    --border: 270 15% 15%;
+    --input: 270 15% 15%;
+    --ring: 270 80% 55%;
 
     --radius: 18px;
 
@@ -41,33 +41,33 @@
   }
 
   .dark {
-    --background: 173 25% 8%;
+    --background: 270 30% 6%;
     --foreground: 0 0% 100%;
 
-    --card: 173 30% 11%;
+    --card: 270 25% 10%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 173 30% 11%;
+    --popover: 270 25% 10%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 170 51% 36%;
+    --primary: 270 80% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 170 40% 40%;
+    --secondary: 178 60% 40%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 173 20% 14%;
-    --muted-foreground: 173 8% 60%;
+    --muted: 270 20% 14%;
+    --muted-foreground: 270 8% 60%;
 
-    --accent: 170 51% 36%;
+    --accent: 270 80% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 173 15% 12%;
-    --input: 173 15% 12%;
-    --ring: 170 51% 36%;
+    --border: 270 15% 15%;
+    --input: 270 15% 15%;
+    --ring: 270 80% 55%;
   }
 }
 
@@ -109,22 +109,22 @@
   .card-base {
     @apply rounded-[18px] border transition-all duration-250 ease-out;
     border-color: rgba(255, 255, 255, 0.06);
-    background-color: hsl(173 30% 11%);
+    background-color: hsl(270 25% 10%);
   }
 
   .card-base:hover {
     transform: translateY(-4px);
-    border-color: hsl(170 51% 36%);
+    border-color: hsl(270 80% 55%);
   }
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-250 ease-out;
-    background-color: hsl(170 51% 36%);
+    background-color: hsl(270 80% 55%);
     color: #ffffff;
   }
 
   .btn-primary:hover {
-    background-color: hsl(170 51% 40%);
+    background-color: hsl(270 80% 60%);
     transform: scale(1.02);
   }
 
@@ -135,8 +135,8 @@
   }
 
   .btn-secondary:hover {
-    border-color: hsl(170 51% 36%);
-    color: hsl(170 51% 60%);
+    border-color: hsl(270 80% 55%);
+    color: hsl(270 80% 70%);
     transform: scale(1.02);
   }
 
@@ -158,13 +158,13 @@
 
   @keyframes pulse-ring {
     0% {
-      box-shadow: 0 0 0 0 hsl(170 51% 36% / 0.4);
+      box-shadow: 0 0 0 0 hsl(270 80% 55% / 0.4);
     }
     70% {
-      box-shadow: 0 0 0 12px hsl(170 51% 36% / 0);
+      box-shadow: 0 0 0 12px hsl(270 80% 55% / 0);
     }
     100% {
-      box-shadow: 0 0 0 0 hsl(170 51% 36% / 0);
+      box-shadow: 0 0 0 0 hsl(270 80% 55% / 0);
     }
   }
 
@@ -175,18 +175,120 @@
 
 @layer utilities {
   .text-primary-accent {
-    color: hsl(170 51% 36%);
+    color: hsl(270 80% 55%);
   }
 
   .text-secondary-accent {
-    color: hsl(170 40% 40%);
+    color: hsl(178 60% 45%);
   }
 
   .text-muted-custom {
-    color: hsl(173 8% 55%);
+    color: hsl(270 8% 55%);
   }
 
   .text-secondary-text {
-    color: hsl(173 8% 75%);
+    color: hsl(270 8% 75%);
+  }
+}
+
+/* Living Origami Background */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  perspective: 800px;
+  background: radial-gradient(ellipse at center, hsl(270 30% 12%) 0%, hsl(270 30% 6%) 100%);
+}
+
+.drifter-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  animation: drift linear infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.origami-crane {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: bob 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px hsl(270 80% 55% / 0.6));
+}
+
+.crane-part {
+  position: absolute;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
+.crane-part.body {
+  width: 40px;
+  height: 12px;
+  background: linear-gradient(135deg, hsl(270 80% 50%) 0%, hsl(270 85% 65%) 100%);
+  clip-path: polygon(0% 50%, 30% 0%, 100% 0%, 100% 100%, 30% 100%);
+  transform: translateZ(0px);
+}
+
+.crane-part.wing-left {
+  width: 30px;
+  height: 20px;
+  background: linear-gradient(180deg, hsl(270 80% 55%) 0%, hsl(178 60% 50%) 100%);
+  clip-path: polygon(0% 100%, 50% 0%, 100% 60%);
+  transform-origin: bottom center;
+  transform: translateZ(15px) rotateY(-90deg) skewX(20deg);
+  animation: flap-left 1.2s ease-in-out infinite;
+}
+
+.crane-part.wing-right {
+  width: 30px;
+  height: 20px;
+  background: linear-gradient(180deg, hsl(270 80% 55%) 0%, hsl(178 60% 50%) 100%);
+  clip-path: polygon(0% 60%, 50% 0%, 100% 100%);
+  transform-origin: bottom center;
+  transform: translateZ(15px) rotateY(90deg) skewX(-20deg);
+  animation: flap-right 1.2s ease-in-out infinite;
+}
+
+.crane-part.tail {
+  width: 20px;
+  height: 10px;
+  background: linear-gradient(90deg, hsl(270 80% 45%) 0%, hsl(270 80% 60%) 100%);
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  transform: translateZ(0px) translateX(-18px);
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(-100vw) translateY(var(--y-start)) rotateZ(var(--r-start));
+  }
+  100% {
+    transform: translateX(100vw) translateY(var(--y-end)) rotateZ(var(--r-end));
+  }
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes flap-left {
+  0%, 100% {
+    transform: translateZ(15px) rotateY(-90deg) skewX(20deg) rotateX(10deg);
+  }
+  50% {
+    transform: translateZ(15px) rotateY(-90deg) skewX(20deg) rotateX(-20deg);
+  }
+}
+
+@keyframes flap-right {
+  0%, 100% {
+    transform: translateZ(15px) rotateY(90deg) skewX(-20deg) rotateX(10deg);
+  }
+  50% {
+    transform: translateZ(15px) rotateY(90deg) skewX(-20deg) rotateX(-20deg);
   }
 }

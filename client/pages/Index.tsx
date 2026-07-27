@@ -1,8 +1,9 @@
 import { PositionCard } from "@/components/PositionCard";
 import { SkillBadge } from "@/components/SkillBadge";
+import { ShaderBackground } from "@/components/ui/ass";
 import { positions } from "@shared/positions";
 import { Link } from "react-router-dom";
-import { Linkedin, Github, Mail, ArrowRight, FileText } from "lucide-react";
+import { Linkedin, Mail, ArrowRight, FileText } from "lucide-react";
 
 const allSkills = [
   "Customer Service",
@@ -27,7 +28,9 @@ const allSkills = [
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="relative min-h-screen overflow-hidden">
+      <ShaderBackground className="absolute inset-0 z-0" />
+      <div className="relative z-10 min-h-screen bg-background/80 text-foreground">
       {/* Hero Section */}
       <section className="section-spacing">
         <div className="container-main">
@@ -95,14 +98,6 @@ export default function Index() {
                   className="p-3 rounded-xl border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-250"
                 >
                   <Mail size={20} strokeWidth={1.5} />
-                </a>
-                <a
-                  href="https://github.com/asbelnascimento"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-xl border border-border text-muted-foreground hover:text-primary hover:border-primary/30 transition-all duration-250"
-                >
-                  <Github size={20} strokeWidth={1.5} />
                 </a>
               </div>
             </div>
@@ -243,14 +238,6 @@ export default function Index() {
               <Linkedin size={20} strokeWidth={1.5} />
             </a>
             <a
-              href="https://github.com/asbelnascimento"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-250"
-            >
-              <Github size={20} strokeWidth={1.5} />
-            </a>
-            <a
               href="mailto:asbel.nascimento123456@gmail.com"
               className="text-muted-foreground hover:text-primary transition-colors duration-250"
             >
@@ -262,6 +249,7 @@ export default function Index() {
           </p>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
