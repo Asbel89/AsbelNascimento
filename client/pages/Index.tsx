@@ -1,7 +1,8 @@
 import { PositionCard } from "@/components/PositionCard";
 import { SkillBadge } from "@/components/SkillBadge";
 import { positions } from "@shared/positions";
-import { Linkedin, Github, Mail, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Linkedin, Github, Mail, ArrowRight, FileText } from "lucide-react";
 
 const allSkills = [
   "Customer Service",
@@ -58,6 +59,13 @@ export default function Index() {
                 >
                   Contact Me
                 </a>
+                <Link
+                  to="/create-cv"
+                  className="btn-secondary"
+                >
+                  <FileText size={16} />
+                  Create your CV
+                </Link>
               </div>
             </div>
 

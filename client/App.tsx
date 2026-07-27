@@ -4,12 +4,14 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import PositionDetail from "./pages/PositionDetail";
+import CreateCV from "./pages/CreateCV";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<Index />} />
+      <Route path="/create-cv" element={<CreateCV />} />
       <Route path="/position/:positionId" element={<PositionDetail />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
