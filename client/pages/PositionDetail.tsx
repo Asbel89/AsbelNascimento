@@ -8,6 +8,7 @@ import { ChevronLeft, Download, FileText, Mail, MapPin, ExternalLink, Globe } fr
 import { useEditMode } from "@/hooks/useEditMode";
 import { EditableSection } from "@/components/ui/EditableSection";
 import { EditControls } from "@/components/ui/EditControls";
+import type { ReactNode } from "react";
 
 export default function PositionDetail() {
   const { positionId } = useParams();
@@ -26,11 +27,6 @@ export default function PositionDetail() {
     { id: "cta", label: "Call to Action", visible: true },
   ]);
 
-  const sectionVisible = (id: string) => {
-    const s = edit.sections.find((s) => s.id === id);
-    return s ? s.visible : true;
-  };
-
   if (!position) {
     return (
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
@@ -43,6 +39,142 @@ export default function PositionDetail() {
       </div>
     );
   }
+
+  const sectionsContent: Record<string, ReactNode> = {
+    "cover-letter": (
+      <section className="mb-16">
+        <SectionHeader title="Cover Letter" />
+        <div className="max-w-none space-y-4">
+          {position.coverLetter.split("\n\n").map((paragraph, idx) => (
+            <p key={idx} className="text-secondary-text leading-relaxed whitespace-pre-wrap">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </section>
+    ),
+    summary: (
+      <section className="mb-16">
+        <SectionHeader title="Professional Summary" />
+        <p className="text-secondary-text leading-relaxed">{position.summary}</p>
+      </section>
+    ),
+    "core-skills": (
+      <section className="mb-16">
+        <SectionHeader title="Core Skills" />
+        <div className="flex flex-wrap gap-2.5">
+          {position.coreSkills.map((skill) => (
+            <SkillBadge key={skill} skill={skill} variant="primary" />
+          ))}
+        </div>
+      </section>
+    ),
+    experience: (
+      <section className="mb-16">
+        <SectionHeader title="Relevant Experience" />
+        <div>
+          {position.experience.map((exp, idx) => (
+            <ExperienceItem key={idx} {...exp} />
+          ))}
+        </div>
+      </section>
+    ),
+    languages: (
+      <section className="mb-16">
+        <SectionHeader title="Languages" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {position.languages.map((lang) => (
+            <div
+              key={lang.name}
+              className="flex justify-between items-center p-4 rounded-xl border border-border/50 bg-card/50"
+            >
+              <span className="font-medium text-foreground">{lang.name}</span>
+              <span className="text-sm text-muted-foreground">{lang.level}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    ),
+    strengths: (
+      <section className="mb-16">
+        <SectionHeader title="Personal Strengths" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {position.personalStrengths.map((strength) => (
+            <div
+              key={strength}
+              className="p-4 rounded-xl border border-border/50 bg-card/50 flex items-center gap-3"
+            >
+              <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+              <span className="text-foreground">{strength}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    ),
+    courses:
+      position.courses && position.courses.length > 0 ? (
+        <section className="mb-16">
+          <SectionHeader title="Courses & Certificates" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {position.courses.map((course) => (
+              <a
+                key={course.title}
+                href={course.image}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block rounded-xl border border-border/50 bg-card/50 overflow-hidden hover:border-primary/30 transition-all duration-250"
+              >
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-250 flex items-center gap-2">
+                    {course.title}
+                    <ExternalLink
+                      size={12}
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-250"
+                    />
+                  </p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ) : null,
+    "criminal-check": (
+      <section className="mb-16">
+        <SectionHeader title="Criminal Background Check" />
+        <a
+          href="/criminal-check.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl border border-border/50 bg-card/50 text-foreground font-medium hover:border-primary/30 hover:text-primary transition-all duration-250"
+        >
+          <FileText size={18} strokeWidth={1.5} />
+          View Certificate
+          <ExternalLink size={14} className="text-muted-foreground" />
+        </a>
+      </section>
+    ),
+    cta: (
+      <section className="py-12 px-8 rounded-2xl border border-border/50 bg-card/30 text-center">
+        <h3 className="text-xl font-semibold font-display mb-3">
+          Interested in working together?
+        </h3>
+        <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+          Feel free to reach out if you'd like to discuss how I can contribute to your organization.
+        </p>
+        <a href="mailto:asbel.nascimento123456@gmail.com" className="btn-primary">
+          <Mail size={16} />
+          Get in Touch
+        </a>
+      </section>
+    ),
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -114,294 +246,50 @@ export default function PositionDetail() {
           </div>
         </div>
 
-        {sectionVisible("cover-letter") && (
-          <EditableSection
-            id="cover-letter"
-            label="Cover Letter"
-            visible
-            isAuthorized={edit.isAuthorized}
-            onMoveUp={edit.moveUp}
-            onMoveDown={edit.moveDown}
-            onToggleVisible={edit.toggleVisible}
-            onAddSection={edit.addSection}
-            onRemoveSection={edit.removeSection}
-            onEditLabel={edit.editSectionLabel}
-          >
-            <section className="mb-16">
-              <SectionHeader title="Cover Letter" />
-              <div className="max-w-none space-y-4">
-                {position.coverLetter.split("\n\n").map((paragraph, idx) => (
-                  <p key={idx} className="text-secondary-text leading-relaxed whitespace-pre-wrap">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </section>
-          </EditableSection>
-        )}
+        {edit.sections.map((section) => {
+          const content =
+            section.type === "custom"
+              ? null
+              : sectionsContent[section.id];
 
-        {sectionVisible("summary") && (
-          <EditableSection
-            id="summary"
-            label="Professional Summary"
-            visible
-            isAuthorized={edit.isAuthorized}
-            onMoveUp={edit.moveUp}
-            onMoveDown={edit.moveDown}
-            onToggleVisible={edit.toggleVisible}
-            onAddSection={edit.addSection}
-            onRemoveSection={edit.removeSection}
-            onEditLabel={edit.editSectionLabel}
-          >
-            <section className="mb-16">
-              <SectionHeader title="Professional Summary" />
-              <p className="text-secondary-text leading-relaxed">{position.summary}</p>
-            </section>
-          </EditableSection>
-        )}
+          if (section.type !== "custom" && content === undefined) return null;
 
-        {sectionVisible("core-skills") && (
-          <EditableSection
-            id="core-skills"
-            label="Core Skills"
-            visible
-            isAuthorized={edit.isAuthorized}
-            onMoveUp={edit.moveUp}
-            onMoveDown={edit.moveDown}
-            onToggleVisible={edit.toggleVisible}
-            onAddSection={edit.addSection}
-            onRemoveSection={edit.removeSection}
-            onEditLabel={edit.editSectionLabel}
-          >
-            <section className="mb-16">
-              <SectionHeader title="Core Skills" />
-              <div className="flex flex-wrap gap-2.5">
-                {position.coreSkills.map((skill) => (
-                  <SkillBadge key={skill} skill={skill} variant="primary" />
-                ))}
-              </div>
-            </section>
-          </EditableSection>
-        )}
+          if (
+            section.type !== "custom" &&
+            section.id === "courses" &&
+            !(position.courses && position.courses.length > 0)
+          )
+            return null;
 
-        {sectionVisible("experience") && (
-          <EditableSection
-            id="experience"
-            label="Relevant Experience"
-            visible
-            isAuthorized={edit.isAuthorized}
-            onMoveUp={edit.moveUp}
-            onMoveDown={edit.moveDown}
-            onToggleVisible={edit.toggleVisible}
-            onAddSection={edit.addSection}
-            onRemoveSection={edit.removeSection}
-            onEditLabel={edit.editSectionLabel}
-          >
-            <section className="mb-16">
-              <SectionHeader title="Relevant Experience" />
-              <div>
-                {position.experience.map((exp, idx) => (
-                  <ExperienceItem key={idx} {...exp} />
-                ))}
-              </div>
-            </section>
-          </EditableSection>
-        )}
-
-        {sectionVisible("languages") && (
-          <EditableSection
-            id="languages"
-            label="Languages"
-            visible
-            isAuthorized={edit.isAuthorized}
-            onMoveUp={edit.moveUp}
-            onMoveDown={edit.moveDown}
-            onToggleVisible={edit.toggleVisible}
-            onAddSection={edit.addSection}
-            onRemoveSection={edit.removeSection}
-            onEditLabel={edit.editSectionLabel}
-          >
-            <section className="mb-16">
-              <SectionHeader title="Languages" />
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {position.languages.map((lang) => (
-                  <div
-                    key={lang.name}
-                    className="flex justify-between items-center p-4 rounded-xl border border-border/50 bg-card/50"
-                  >
-                    <span className="font-medium text-foreground">{lang.name}</span>
-                    <span className="text-sm text-muted-foreground">{lang.level}</span>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </EditableSection>
-        )}
-
-        {sectionVisible("strengths") && (
-          <EditableSection
-            id="strengths"
-            label="Personal Strengths"
-            visible
-            isAuthorized={edit.isAuthorized}
-            onMoveUp={edit.moveUp}
-            onMoveDown={edit.moveDown}
-            onToggleVisible={edit.toggleVisible}
-            onAddSection={edit.addSection}
-            onRemoveSection={edit.removeSection}
-            onEditLabel={edit.editSectionLabel}
-          >
-            <section className="mb-16">
-              <SectionHeader title="Personal Strengths" />
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {position.personalStrengths.map((strength) => (
-                  <div
-                    key={strength}
-                    className="p-4 rounded-xl border border-border/50 bg-card/50 flex items-center gap-3"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span className="text-foreground">{strength}</span>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </EditableSection>
-        )}
-
-        {position.courses &&
-          position.courses.length > 0 &&
-          sectionVisible("courses") && (
-            <EditableSection
-              id="courses"
-              label="Courses & Certificates"
-              visible
-              isAuthorized={edit.isAuthorized}
-              onMoveUp={edit.moveUp}
-              onMoveDown={edit.moveDown}
-              onToggleVisible={edit.toggleVisible}
-              onAddSection={edit.addSection}
-              onRemoveSection={edit.removeSection}
-              onEditLabel={edit.editSectionLabel}
-            >
-              <section className="mb-16">
-                <SectionHeader title="Courses & Certificates" />
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {position.courses.map((course) => (
-                    <a
-                      key={course.title}
-                      href={course.image}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group block rounded-xl border border-border/50 bg-card/50 overflow-hidden hover:border-primary/30 transition-all duration-250"
-                    >
-                      <div className="aspect-video overflow-hidden">
-                        <img
-                          src={course.image}
-                          alt={course.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <div className="p-4">
-                        <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-250 flex items-center gap-2">
-                          {course.title}
-                          <ExternalLink
-                            size={12}
-                            className="opacity-0 group-hover:opacity-100 transition-opacity duration-250"
-                          />
-                        </p>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </section>
-            </EditableSection>
-          )}
-
-        {sectionVisible("criminal-check") && (
-          <EditableSection
-            id="criminal-check"
-            label="Criminal Background Check"
-            visible
-            isAuthorized={edit.isAuthorized}
-            onMoveUp={edit.moveUp}
-            onMoveDown={edit.moveDown}
-            onToggleVisible={edit.toggleVisible}
-            onAddSection={edit.addSection}
-            onRemoveSection={edit.removeSection}
-            onEditLabel={edit.editSectionLabel}
-          >
-            <section className="mb-16">
-              <SectionHeader title="Criminal Background Check" />
-              <a
-                href="/criminal-check.png"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl border border-border/50 bg-card/50 text-foreground font-medium hover:border-primary/30 hover:text-primary transition-all duration-250"
-              >
-                <FileText size={18} strokeWidth={1.5} />
-                View Certificate
-                <ExternalLink size={14} className="text-muted-foreground" />
-              </a>
-            </section>
-          </EditableSection>
-        )}
-
-        {sectionVisible("cta") && (
-          <EditableSection
-            id="cta"
-            label="Call to Action"
-            visible
-            isAuthorized={edit.isAuthorized}
-            onMoveUp={edit.moveUp}
-            onMoveDown={edit.moveDown}
-            onToggleVisible={edit.toggleVisible}
-            onAddSection={edit.addSection}
-            onRemoveSection={edit.removeSection}
-            onEditLabel={edit.editSectionLabel}
-          >
-            <section className="py-12 px-8 rounded-2xl border border-border/50 bg-card/30 text-center">
-              <h3 className="text-xl font-semibold font-display mb-3">
-                Interested in working together?
-              </h3>
-              <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-                Feel free to reach out if you'd like to discuss how I can contribute to your
-                organization.
-              </p>
-              <a href="mailto:asbel.nascimento123456@gmail.com" className="btn-primary">
-                <Mail size={16} />
-                Get in Touch
-              </a>
-            </section>
-          </EditableSection>
-        )}
-
-        {/* Custom sections */}
-        {edit.sections
-          .filter((s) => s.type === "custom" && s.visible)
-          .map((section) => (
+          return (
             <EditableSection
               key={section.id}
               id={section.id}
               label={section.label}
-              visible
+              visible={section.visible}
               isAuthorized={edit.isAuthorized}
-              isCustom
+              isCustom={section.type === "custom"}
               onMoveUp={edit.moveUp}
               onMoveDown={edit.moveDown}
               onToggleVisible={edit.toggleVisible}
               onAddSection={edit.addSection}
               onRemoveSection={edit.removeSection}
-              onEditContent={edit.editSectionContent}
+              onEditContent={section.type === "custom" ? edit.editSectionContent : undefined}
               onEditLabel={edit.editSectionLabel}
             >
-              <section className="mb-16">
-                <SectionHeader title={section.label} />
-                <p className="text-secondary-text leading-relaxed whitespace-pre-wrap">
-                  {section.content}
-                </p>
-              </section>
+              {section.type === "custom" ? (
+                <section className="mb-16">
+                  <SectionHeader title={section.label} />
+                  <p className="text-secondary-text leading-relaxed whitespace-pre-wrap">
+                    {section.content}
+                  </p>
+                </section>
+              ) : (
+                content
+              )}
             </EditableSection>
-          ))}
+          );
+        })}
       </main>
 
       {/* Footer */}
