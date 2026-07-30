@@ -62,6 +62,10 @@ export function generateCV(position: Position): void {
   y += 4;
   doc.text(CONTACT.location, MARGIN_LEFT, y);
   y += 4;
+  if (position.phone) {
+    doc.text(position.phone, MARGIN_LEFT, y);
+    y += 4;
+  }
   doc.text(`${CONTACT.linkedin}  |  ${CONTACT.instagram}`, MARGIN_LEFT, y);
   y += 9;
 
@@ -76,6 +80,14 @@ export function generateCV(position: Position): void {
   y += 7;
   y = wrapText(doc, position.summary, y, CONTENT_WIDTH);
   y += 5;
+
+  // === CAREER OBJECTIVE ===
+  if (position.careerObjective) {
+    y = checkPageBreak(doc, y, 15);
+    y = addSectionTitle(doc, y, "Career Objective");
+    y = wrapText(doc, position.careerObjective, y, CONTENT_WIDTH);
+    y += 5;
+  }
 
   // === CORE SKILLS ===
   y = checkPageBreak(doc, y, 20);
@@ -97,6 +109,61 @@ export function generateCV(position: Position): void {
     y += 4.5;
   });
   y += 5;
+
+  // === EDUCATION ===
+  if (position.education && position.education.length > 0) {
+    y = checkPageBreak(doc, y, 15);
+    y = addSectionTitle(doc, y, "Education");
+    position.education.forEach((edu) => {
+      y = checkPageBreak(doc, y, 10);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(0, 0, 0);
+      const eduLine = edu.institution ? `${edu.degree} — ${edu.institution}` : edu.degree;
+      doc.text(eduLine, MARGIN_LEFT, y);
+      y += 4.5;
+      if (edu.period) {
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(9);
+        doc.setTextColor(80, 80, 80);
+        doc.text(edu.period, MARGIN_LEFT, y);
+        y += 4.5;
+      }
+    });
+    y += 3;
+  }
+
+  // === PROJECTS ===
+  if (position.projects && position.projects.length > 0) {
+    y = checkPageBreak(doc, y, 15);
+    y = addSectionTitle(doc, y, "Projects");
+    position.projects.forEach((proj) => {
+      y = checkPageBreak(doc, y, 10);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(10);
+      doc.setTextColor(0, 0, 0);
+      doc.text(proj.name, MARGIN_LEFT, y);
+      y += 4.5;
+      if (proj.description) {
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(9);
+        doc.setTextColor(30, 30, 30);
+        const descLines = doc.splitTextToSize(proj.description, CONTENT_WIDTH);
+        descLines.forEach((line: string) => {
+          doc.text(line, MARGIN_LEFT, y);
+          y += 4.5;
+        });
+      }
+      if (proj.technologies && proj.technologies.length > 0) {
+        doc.setFont("helvetica", "italic");
+        doc.setFontSize(8);
+        doc.setTextColor(100, 100, 100);
+        doc.text(proj.technologies.join(", "), MARGIN_LEFT, y);
+        y += 4.5;
+      }
+    });
+    y += 3;
+  }
 
   // === RELEVANT EXPERIENCE ===
   y = checkPageBreak(doc, y, 20);

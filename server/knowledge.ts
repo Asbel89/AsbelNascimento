@@ -5,6 +5,7 @@ export const knowledgeBase = {
     email: "asbel.nascimento123456@gmail.com",
     linkedin: "linkedin.com/in/asbelnascimento",
     website: "https://asbeldev.com",
+    phone: "",
     summary:
       "Motivated professional relocating to Ireland with experience in quality inspection, logistics, customer service, and IT support. Passionate about learning, teamwork, and delivering excellent results. Currently building technical skills in web development and cloud technologies.",
     careerGoal:
@@ -82,6 +83,8 @@ export const knowledgeBase = {
     concepts: ["Responsive Design", "Version Control", "UI/UX Basics"],
     learning: ["TypeScript", "React", "Node.js", "Cloud (AWS)"],
   },
+
+  education: [],
 
   certifications: [
     "AWS Cloud Foundations",

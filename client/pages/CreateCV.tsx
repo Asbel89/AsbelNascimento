@@ -13,14 +13,32 @@ interface ExperienceEntry {
   description: string;
 }
 
+interface EducationEntry {
+  id: string;
+  degree: string;
+  institution: string;
+  period: string;
+}
+
+interface ProjectEntry {
+  id: string;
+  name: string;
+  description: string;
+  technologies: string;
+}
+
 interface CVData {
   fullName: string;
   email: string;
+  phone: string;
   linkedin: string;
   city: string;
   professionalSummary: string;
+  careerObjective: string;
   coreSkills: string[];
   experiences: ExperienceEntry[];
+  education: EducationEntry[];
+  projects: ProjectEntry[];
   languages: string[];
   personalStrengths: string[];
   coverLetter: string;
@@ -36,14 +54,32 @@ const emptyExperience = (): ExperienceEntry => ({
   description: "",
 });
 
+const emptyEducation = (): EducationEntry => ({
+  id: crypto.randomUUID(),
+  degree: "",
+  institution: "",
+  period: "",
+});
+
+const emptyProject = (): ProjectEntry => ({
+  id: crypto.randomUUID(),
+  name: "",
+  description: "",
+  technologies: "",
+});
+
 const emptyCV: CVData = {
   fullName: "",
   email: "",
+  phone: "",
   linkedin: "",
   city: "",
   professionalSummary: "",
+  careerObjective: "",
   coreSkills: [],
   experiences: [emptyExperience()],
+  education: [emptyEducation()],
+  projects: [emptyProject()],
   languages: [],
   personalStrengths: [],
   coverLetter: "",
@@ -279,9 +315,17 @@ function CVPreview({ data }: { data: CVData }) {
         </h1>
         <div className="flex flex-wrap gap-x-3 gap-y-1 mt-2 text-gray-500 text-[11px]">
           {data.email && <span>{data.email}</span>}
+          {data.phone && (
+            <>
+              {(data.email || data.linkedin || data.city) && (
+                <span className="text-gray-300">|</span>
+              )}
+              <span>{data.phone}</span>
+            </>
+          )}
           {data.city && (
             <>
-              {(data.email || data.linkedin) && (
+              {(data.email || data.linkedin || data.phone) && (
                 <span className="text-gray-300">|</span>
               )}
               <span>{data.city}</span>
@@ -289,7 +333,7 @@ function CVPreview({ data }: { data: CVData }) {
           )}
           {data.linkedin && (
             <>
-              {(data.email || data.city) && (
+              {(data.email || data.city || data.phone) && (
                 <span className="text-gray-300">|</span>
               )}
               <span>{data.linkedin}</span>
@@ -308,6 +352,15 @@ function CVPreview({ data }: { data: CVData }) {
           </PreviewSection>
         )}
 
+        {/* Career Objective */}
+        {data.careerObjective && (
+          <PreviewSection title="Career Objective">
+            <p className="text-gray-700 whitespace-pre-line">
+              {data.careerObjective}
+            </p>
+          </PreviewSection>
+        )}
+
         {/* Core Skills */}
         {data.coreSkills.length > 0 && (
           <PreviewSection title="Core Skills">
@@ -320,6 +373,48 @@ function CVPreview({ data }: { data: CVData }) {
                   {s}
                 </span>
               ))}
+            </div>
+          </PreviewSection>
+        )}
+
+        {/* Education */}
+        {data.education.some((e) => e.degree || e.institution) && (
+          <PreviewSection title="Education">
+            <div className="space-y-2">
+              {data.education
+                .filter((e) => e.degree || e.institution)
+                .map((edu) => (
+                  <div key={edu.id}>
+                    <span className="font-semibold text-gray-900">{edu.degree}</span>
+                    {edu.institution && (
+                      <span className="text-gray-600"> — {edu.institution}</span>
+                    )}
+                    {edu.period && (
+                      <span className="text-gray-400 ml-2 text-[10px]">{edu.period}</span>
+                    )}
+                  </div>
+                ))}
+            </div>
+          </PreviewSection>
+        )}
+
+        {/* Projects */}
+        {data.projects.some((p) => p.name || p.description) && (
+          <PreviewSection title="Projects">
+            <div className="space-y-2">
+              {data.projects
+                .filter((p) => p.name || p.description)
+                .map((proj) => (
+                  <div key={proj.id}>
+                    <span className="font-semibold text-gray-900">{proj.name}</span>
+                    {proj.description && (
+                      <p className="text-gray-700 mt-0.5">{proj.description}</p>
+                    )}
+                    {proj.technologies && (
+                      <p className="text-gray-400 text-[10px] mt-0.5">{proj.technologies}</p>
+                    )}
+                  </div>
+                ))}
             </div>
           </PreviewSection>
         )}
@@ -482,6 +577,7 @@ function generatePDF(data: CVData) {
   // ── CONTACT ──
   const contactParts: string[] = [];
   if (data.email) contactParts.push(data.email);
+  if (data.phone) contactParts.push(data.phone);
   if (data.city) contactParts.push(data.city);
   if (data.linkedin) contactParts.push(data.linkedin);
   if (contactParts.length > 0) {
@@ -495,10 +591,46 @@ function generatePDF(data: CVData) {
     writeMultiline(data.professionalSummary);
   }
 
+  // ── CAREER OBJECTIVE ──
+  if (data.careerObjective.trim()) {
+    sectionHeading("Career Objective");
+    writeMultiline(data.careerObjective);
+  }
+
   // ── CORE SKILLS ──
   if (data.coreSkills.length > 0) {
     sectionHeading("Core Skills");
     bulletList(data.coreSkills);
+  }
+
+  // ── EDUCATION ──
+  const filledEducation = data.education.filter((e) => e.degree || e.institution);
+  if (filledEducation.length > 0) {
+    sectionHeading("Education");
+    for (const edu of filledEducation) {
+      const line = edu.institution ? `${edu.degree}, ${edu.institution}` : edu.degree;
+      writeLine(line, { bold: true, size: 10 });
+      if (edu.period) {
+        writeLine(edu.period, { size: 9, color: [100, 100, 100] });
+      }
+      y += 2;
+    }
+  }
+
+  // ── PROJECTS ──
+  const filledProjects = data.projects.filter((p) => p.name || p.description);
+  if (filledProjects.length > 0) {
+    sectionHeading("Projects");
+    for (const proj of filledProjects) {
+      writeLine(proj.name, { bold: true, size: 10 });
+      if (proj.description) {
+        writeMultiline(proj.description);
+      }
+      if (proj.technologies) {
+        writeLine(proj.technologies, { size: 9, color: [100, 100, 100] });
+      }
+      y += 3;
+    }
   }
 
   // ── RELEVANT EXPERIENCE ──
@@ -653,6 +785,13 @@ export default function CreateCV() {
                     type="email"
                   />
                   <TextInput
+                    label="Phone"
+                    value={cv.phone}
+                    onChange={(v) => update("phone", v)}
+                    placeholder="+353 83 123 4567"
+                    type="tel"
+                  />
+                  <TextInput
                     label="City"
                     value={cv.city}
                     onChange={(v) => update("city", v)}
@@ -683,11 +822,27 @@ export default function CreateCV() {
                 />
               </div>
 
-              {/* 3 — Core Skills */}
+              {/* 3 — Career Objective */}
               <div className="card-base p-8 space-y-4">
                 <h2 className="text-lg font-bold font-display flex items-center gap-2">
                   <span className="w-7 h-7 rounded-lg bg-primary/15 text-primary flex items-center justify-center text-xs font-bold">
                     3
+                  </span>
+                  Career Objective
+                </h2>
+                <TextArea
+                  value={cv.careerObjective}
+                  onChange={(v) => update("careerObjective", v)}
+                  placeholder="Write your career objective — what you're looking for and what you bring to the table..."
+                  rows={3}
+                />
+              </div>
+
+              {/* 4 — Core Skills */}
+              <div className="card-base p-8 space-y-4">
+                <h2 className="text-lg font-bold font-display flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-lg bg-primary/15 text-primary flex items-center justify-center text-xs font-bold">
+                    4
                   </span>
                   Core Skills
                 </h2>
@@ -698,12 +853,190 @@ export default function CreateCV() {
                 />
               </div>
 
-              {/* 4 — Relevant Experience */}
+              {/* 5 — Education */}
               <div className="card-base p-8 space-y-5">
                 <div className="flex items-center justify-between">
                   <h2 className="text-lg font-bold font-display flex items-center gap-2">
                     <span className="w-7 h-7 rounded-lg bg-primary/15 text-primary flex items-center justify-center text-xs font-bold">
-                      4
+                      5
+                    </span>
+                    Education
+                  </h2>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setCV((prev) => ({
+                        ...prev,
+                        education: [...prev.education, emptyEducation()],
+                      }))
+                    }
+                    className="btn-secondary !px-4 !py-2 text-xs"
+                  >
+                    <Plus size={14} />
+                    Add
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  {cv.education.map((edu, i) => (
+                    <div
+                      key={edu.id}
+                      className="rounded-xl border border-border/40 bg-background/40 p-5 space-y-4"
+                    >
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm font-medium text-muted-foreground">Education Entry</p>
+                        {cv.education.length > 1 && (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setCV((prev) => ({
+                                ...prev,
+                                education: prev.education.filter((_, idx) => idx !== i),
+                              }))
+                            }
+                            className="text-destructive/70 hover:text-destructive transition-colors"
+                          >
+                            <X size={16} />
+                          </button>
+                        )}
+                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <TextInput
+                          label="Degree"
+                          value={edu.degree}
+                          onChange={(v) =>
+                            setCV((prev) => {
+                              const next = [...prev.education];
+                              next[i] = { ...next[i], degree: v };
+                              return { ...prev, education: next };
+                            })
+                          }
+                          placeholder="e.g. Bachelor of Science"
+                        />
+                        <TextInput
+                          label="Institution"
+                          value={edu.institution}
+                          onChange={(v) =>
+                            setCV((prev) => {
+                              const next = [...prev.education];
+                              next[i] = { ...next[i], institution: v };
+                              return { ...prev, education: next };
+                            })
+                          }
+                          placeholder="e.g. University of Dublin"
+                        />
+                        <TextInput
+                          label="Period"
+                          value={edu.period}
+                          onChange={(v) =>
+                            setCV((prev) => {
+                              const next = [...prev.education];
+                              next[i] = { ...next[i], period: v };
+                              return { ...prev, education: next };
+                            })
+                          }
+                          placeholder="e.g. 2018 - 2022"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 6 — Projects */}
+              <div className="card-base p-8 space-y-5">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-bold font-display flex items-center gap-2">
+                    <span className="w-7 h-7 rounded-lg bg-primary/15 text-primary flex items-center justify-center text-xs font-bold">
+                      6
+                    </span>
+                    Projects
+                  </h2>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setCV((prev) => ({
+                        ...prev,
+                        projects: [...prev.projects, emptyProject()],
+                      }))
+                    }
+                    className="btn-secondary !px-4 !py-2 text-xs"
+                  >
+                    <Plus size={14} />
+                    Add
+                  </button>
+                </div>
+                <div className="space-y-4">
+                  {cv.projects.map((proj, i) => (
+                    <div
+                      key={proj.id}
+                      className="rounded-xl border border-border/40 bg-background/40 p-5 space-y-4"
+                    >
+                      <div className="flex items-center justify-between">
+                        <p className="text-sm font-medium text-muted-foreground">Project Entry</p>
+                        {cv.projects.length > 1 && (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setCV((prev) => ({
+                                ...prev,
+                                projects: prev.projects.filter((_, idx) => idx !== i),
+                              }))
+                            }
+                            className="text-destructive/70 hover:text-destructive transition-colors"
+                          >
+                            <X size={16} />
+                          </button>
+                        )}
+                      </div>
+                      <div className="grid grid-cols-1 gap-4">
+                        <TextInput
+                          label="Project Name"
+                          value={proj.name}
+                          onChange={(v) =>
+                            setCV((prev) => {
+                              const next = [...prev.projects];
+                              next[i] = { ...next[i], name: v };
+                              return { ...prev, projects: next };
+                            })
+                          }
+                          placeholder="e.g. Personal Portfolio"
+                        />
+                        <TextArea
+                          value={proj.description}
+                          onChange={(v) =>
+                            setCV((prev) => {
+                              const next = [...prev.projects];
+                              next[i] = { ...next[i], description: v };
+                              return { ...prev, projects: next };
+                            })
+                          }
+                          placeholder="Describe the project..."
+                          rows={2}
+                        />
+                        <TextInput
+                          label="Technologies"
+                          value={proj.technologies}
+                          onChange={(v) =>
+                            setCV((prev) => {
+                              const next = [...prev.projects];
+                              next[i] = { ...next[i], technologies: v };
+                              return { ...prev, projects: next };
+                            })
+                          }
+                          placeholder="e.g. React, TypeScript, Tailwind CSS"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* 7 — Relevant Experience */}
+              <div className="card-base p-8 space-y-5">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-lg font-bold font-display flex items-center gap-2">
+                    <span className="w-7 h-7 rounded-lg bg-primary/15 text-primary flex items-center justify-center text-xs font-bold">
+                      7
                     </span>
                     Relevant Experience
                   </h2>
@@ -729,11 +1062,11 @@ export default function CreateCV() {
                 </div>
               </div>
 
-              {/* 5 — Languages */}
+              {/* 8 — Languages */}
               <div className="card-base p-8 space-y-4">
                 <h2 className="text-lg font-bold font-display flex items-center gap-2">
                   <span className="w-7 h-7 rounded-lg bg-primary/15 text-primary flex items-center justify-center text-xs font-bold">
-                    5
+                    8
                   </span>
                   Languages
                 </h2>
@@ -744,11 +1077,11 @@ export default function CreateCV() {
                 />
               </div>
 
-              {/* 6 — Personal Strengths */}
+              {/* 9 — Personal Strengths */}
               <div className="card-base p-8 space-y-4">
                 <h2 className="text-lg font-bold font-display flex items-center gap-2">
                   <span className="w-7 h-7 rounded-lg bg-primary/15 text-primary flex items-center justify-center text-xs font-bold">
-                    6
+                    9
                   </span>
                   Personal Strengths
                 </h2>
@@ -759,11 +1092,11 @@ export default function CreateCV() {
                 />
               </div>
 
-              {/* 7 — Cover Letter */}
+              {/* 10 — Cover Letter */}
               <div className="card-base p-8 space-y-4">
                 <h2 className="text-lg font-bold font-display flex items-center gap-2">
                   <span className="w-7 h-7 rounded-lg bg-primary/15 text-primary flex items-center justify-center text-xs font-bold">
-                    7
+                    10
                   </span>
                   Cover Letter
                 </h2>

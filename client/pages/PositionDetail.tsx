@@ -4,7 +4,7 @@ import { PositionSwitcher } from "@/components/PositionSwitcher";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SkillBadge } from "@/components/SkillBadge";
 import { ExperienceItem } from "@/components/ExperienceItem";
-import { ChevronLeft, Download, FileText, Mail, MapPin, ExternalLink, Globe } from "lucide-react";
+import { ChevronLeft, Download, FileText, Mail, MapPin, ExternalLink, Globe, Phone } from "lucide-react";
 import { useEditMode } from "@/hooks/useEditMode";
 import { EditableSection } from "@/components/ui/EditableSection";
 import { EditControls } from "@/components/ui/EditControls";
@@ -23,6 +23,9 @@ export default function PositionDetail() {
     { id: "languages", label: "Languages", visible: true },
     { id: "strengths", label: "Personal Strengths", visible: true },
     { id: "courses", label: "Courses & Certificates", visible: true },
+    { id: "education", label: "Education", visible: true },
+    { id: "projects", label: "Projects", visible: true },
+    { id: "career-objective", label: "Career Objective", visible: true },
     { id: "criminal-check", label: "Criminal Background Check", visible: true },
     { id: "cta", label: "Call to Action", visible: true },
   ]);
@@ -145,6 +148,59 @@ export default function PositionDetail() {
           </div>
         </section>
       ) : null,
+    "career-objective": position.careerObjective ? (
+      <section className="mb-16">
+        <SectionHeader title="Career Objective" />
+        <p className="text-secondary-text leading-relaxed">{position.careerObjective}</p>
+      </section>
+    ) : null,
+    education: position.education && position.education.length > 0 ? (
+      <section className="mb-16">
+        <SectionHeader title="Education" />
+        <div className="space-y-4">
+          {position.education.map((edu, idx) => (
+            <div
+              key={idx}
+              className="p-4 rounded-xl border border-border/50 bg-card/50"
+            >
+              <p className="font-medium text-foreground">{edu.degree}</p>
+              <p className="text-sm text-muted-foreground mt-0.5">{edu.institution}</p>
+              {edu.period && (
+                <p className="text-xs text-muted-foreground mt-0.5">{edu.period}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    ) : null,
+    projects: position.projects && position.projects.length > 0 ? (
+      <section className="mb-16">
+        <SectionHeader title="Projects" />
+        <div className="space-y-4">
+          {position.projects.map((proj, idx) => (
+            <div
+              key={idx}
+              className="p-5 rounded-xl border border-border/50 bg-card/50"
+            >
+              <p className="font-medium text-foreground">{proj.name}</p>
+              <p className="text-sm text-secondary-text mt-1">{proj.description}</p>
+              {proj.technologies && proj.technologies.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mt-3">
+                  {proj.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-0.5 rounded-md bg-primary/10 text-primary text-xs"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    ) : null,
     "criminal-check": (
       <section className="mb-16">
         <SectionHeader title="Criminal Background Check" />
@@ -231,6 +287,12 @@ export default function PositionDetail() {
                 asbel.nascimento123456@gmail.com
               </a>
             </div>
+            {position.phone && (
+              <div className="flex items-center gap-2">
+                <Phone size={14} />
+                <span>{position.phone}</span>
+              </div>
+            )}
             {position.website && (
               <a
                 href={position.website}
@@ -258,6 +320,27 @@ export default function PositionDetail() {
             section.type !== "custom" &&
             section.id === "courses" &&
             !(position.courses && position.courses.length > 0)
+          )
+            return null;
+
+          if (
+            section.type !== "custom" &&
+            section.id === "education" &&
+            !(position.education && position.education.length > 0)
+          )
+            return null;
+
+          if (
+            section.type !== "custom" &&
+            section.id === "projects" &&
+            !(position.projects && position.projects.length > 0)
+          )
+            return null;
+
+          if (
+            section.type !== "custom" &&
+            section.id === "career-objective" &&
+            !position.careerObjective
           )
             return null;
 

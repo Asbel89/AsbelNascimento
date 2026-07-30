@@ -15,6 +15,18 @@ export interface Course {
   image: string;
 }
 
+export interface Education {
+  degree: string;
+  institution: string;
+  period?: string;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  technologies?: string[];
+}
+
 export interface Position {
   id: string;
   title: string;
@@ -28,6 +40,10 @@ export interface Position {
   personalStrengths: string[];
   courses?: Course[];
   website?: string;
+  phone?: string;
+  education?: Education[];
+  careerObjective?: string;
+  projects?: Project[];
 }
 
 export const positions: Position[] = [
