@@ -769,6 +769,16 @@ export default function CreateCV() {
               <li>• You can edit your CV at any time before exporting it.</li>
             </ul>
           </div>
+          <div className="mt-6 max-w-lg">
+            <video
+              src="/Instagram Video/Instagram video.mp4"
+              controls
+              loop
+              muted
+              playsInline
+              className="w-full rounded-xl border border-border/50"
+            />
+          </div>
         </div>
       </section>
 
