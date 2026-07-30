@@ -747,12 +747,28 @@ export default function CreateCV() {
             Back to Home
           </button>
           <h1 className="text-4xl md:text-5xl font-bold font-display">
-            Create Your <span className="text-primary">CV</span>
+            👋 Welcome to the <span className="text-primary">CV Builder</span>
           </h1>
           <p className="text-muted-foreground mt-3 max-w-lg">
-            Fill in your details and see a live preview. Download a
-            professional, ATS-friendly PDF when you're ready.
+            Create a professional, ATS-friendly resume in just a few minutes.
           </p>
+          <div className="mt-8 p-6 rounded-xl border border-border/50 bg-card/50">
+            <p className="text-sm font-semibold text-foreground mb-4">
+              📋 Instructions
+            </p>
+            <ul className="space-y-2 text-sm text-secondary-text">
+              <li>• Fill in all sections with accurate information.</li>
+              <li>• Use your full legal name.</li>
+              <li>• Write your Professional Summary in 3–5 concise sentences.</li>
+              <li>• Add only skills that you genuinely possess.</li>
+              <li>• Include your most recent work experience first.</li>
+              <li>• Keep descriptions short and focused on achievements.</li>
+              <li>• Use clear and professional English.</li>
+              <li>• Double-check spelling and grammar before downloading.</li>
+              <li>• Your live preview updates automatically as you type.</li>
+              <li>• You can edit your CV at any time before exporting it.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -1122,12 +1138,19 @@ export default function CreateCV() {
 
             {/* ── Right: Live Preview ── */}
             <div className="hidden xl:block w-[420px] flex-shrink-0">
-              <div className="sticky top-8">
-                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
-                  Live Preview
-                </p>
-                <div className="max-h-[85vh] overflow-y-auto rounded-2xl">
-                  <CVPreview data={cv} />
+              <div className="sticky top-8 space-y-6">
+                <img
+                  src="/Instagram image/Instagram image.png"
+                  alt="Instagram Image"
+                  className="w-full rounded-2xl border border-border/50"
+                />
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
+                    Live Preview
+                  </p>
+                  <div className="max-h-[85vh] overflow-y-auto rounded-2xl">
+                    <CVPreview data={cv} />
+                  </div>
                 </div>
               </div>
             </div>
