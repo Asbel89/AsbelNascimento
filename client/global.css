@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,68 +6,60 @@
 
 @layer base {
   :root {
-    --background: 270 30% 6%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 270 25% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 270 25% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 270 80% 55%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 178 60% 40%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 214 100% 97%;
+    --secondary-foreground: 221 83% 53%;
 
-    --muted: 270 20% 14%;
-    --muted-foreground: 270 8% 60%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 270 80% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 214 100% 97%;
+    --accent-foreground: 221 83% 53%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 270 15% 15%;
-    --input: 270 15% 15%;
-    --ring: 270 80% 55%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
 
-    --radius: 18px;
+    --radius: 14px;
 
-    --font-sans: "Inter", "Manrope", system-ui, -apple-system, sans-serif;
+    --font-sans: "Inter", system-ui, -apple-system, sans-serif;
     --font-display: "Manrope", "Inter", system-ui, -apple-system, sans-serif;
   }
 
   .dark {
-    --background: 270 30% 6%;
-    --foreground: 0 0% 100%;
-
-    --card: 270 25% 10%;
-    --card-foreground: 0 0% 100%;
-
-    --popover: 270 25% 10%;
-    --popover-foreground: 0 0% 100%;
-
-    --primary: 270 80% 55%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
     --primary-foreground: 0 0% 100%;
-
-    --secondary: 178 60% 40%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 270 20% 14%;
-    --muted-foreground: 270 8% 60%;
-
-    --accent: 270 80% 55%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 270 15% 15%;
-    --input: 270 15% 15%;
-    --ring: 270 80% 55%;
+    --secondary: 214 100% 97%;
+    --secondary-foreground: 221 83% 53%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 214 100% 97%;
+    --accent-foreground: 221 83% 53%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
   }
 }
 
@@ -82,6 +74,7 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    letter-spacing: -0.011em;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
@@ -94,61 +87,76 @@
     overflow-x: auto;
     white-space: pre;
   }
+
+  ::selection {
+    background: hsl(221 83% 53% / 0.14);
+  }
 }
 
 @layer components {
   .section-spacing {
-    @apply py-20;
+    @apply py-16 md:py-20;
   }
 
   .container-main {
-    @apply mx-auto px-5;
+    @apply mx-auto px-5 md:px-6;
     max-width: 1180px;
   }
 
   .card-base {
-    @apply rounded-[18px] border transition-all duration-250 ease-out;
-    border-color: rgba(255, 255, 255, 0.06);
-    background-color: hsl(270 25% 10%);
+    @apply rounded-2xl border bg-card transition-all duration-250 ease-out;
+    border-color: hsl(214 32% 91%);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.04);
   }
 
   .card-base:hover {
-    transform: translateY(-4px);
-    border-color: hsl(270 80% 55%);
+    transform: translateY(-2px);
+    border-color: hsl(221 83% 53% / 0.18);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06), 0 12px 28px rgba(15, 23, 42, 0.06);
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-250 ease-out;
-    background-color: hsl(270 80% 55%);
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ease-out;
+    background-color: hsl(221 83% 53%);
     color: #ffffff;
+    box-shadow: 0 1px 2px rgba(37, 99, 235, 0.12), 0 4px 12px rgba(37, 99, 235, 0.18);
+    letter-spacing: -0.01em;
   }
 
   .btn-primary:hover {
-    background-color: hsl(270 80% 60%);
-    transform: scale(1.02);
+    background-color: hsl(221 83% 48%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.22), 0 8px 24px rgba(37, 99, 235, 0.16);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-250 ease-out;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 ease-out bg-white;
+    border: 1px solid hsl(214 32% 89%);
+    color: hsl(222 47% 11%);
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
   }
 
   .btn-secondary:hover {
-    border-color: hsl(270 80% 55%);
-    color: hsl(270 80% 70%);
-    transform: scale(1.02);
+    border-color: hsl(221 83% 53% / 0.28);
+    color: hsl(221 83% 53%);
+    background-color: hsl(214 100% 97%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
   }
 
   .fade-in-up {
-    animation: fadeInUp 0.5s ease-out forwards;
+    animation: fadeInUp 0.55s ease-out forwards;
     opacity: 0;
   }
 
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(14px);
     }
     to {
       opacity: 1;
@@ -158,61 +166,64 @@
 
   @keyframes pulse-ring {
     0% {
-      box-shadow: 0 0 0 0 hsl(270 80% 55% / 0.4);
+      box-shadow: 0 0 0 0 hsl(221 83% 53% / 0.18);
     }
     70% {
-      box-shadow: 0 0 0 12px hsl(270 80% 55% / 0);
+      box-shadow: 0 0 0 14px hsl(221 83% 53% / 0);
     }
     100% {
-      box-shadow: 0 0 0 0 hsl(270 80% 55% / 0);
+      box-shadow: 0 0 0 0 hsl(221 83% 53% / 0);
     }
   }
 
   .animate-pulse-ring {
-    animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+    animation: pulse-ring 2.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
   }
 
-  .fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
-    opacity: 0;
-  }
-
-  .fade-in-up-delay-1 { animation-delay: 0.15s; }
-  .fade-in-up-delay-2 { animation-delay: 0.3s; }
-  .fade-in-up-delay-3 { animation-delay: 0.45s; }
-  .fade-in-up-delay-4 { animation-delay: 0.6s; }
-  .fade-in-up-delay-5 { animation-delay: 0.75s; }
-  .fade-in-up-delay-6 { animation-delay: 0.9s; }
-  .fade-in-up-delay-7 { animation-delay: 1.05s; }
-  .fade-in-up-delay-8 { animation-delay: 1.2s; }
+  .fade-in-up-delay-1 { animation-delay: 0.12s; }
+  .fade-in-up-delay-2 { animation-delay: 0.24s; }
+  .fade-in-up-delay-3 { animation-delay: 0.36s; }
+  .fade-in-up-delay-4 { animation-delay: 0.48s; }
+  .fade-in-up-delay-5 { animation-delay: 0.6s; }
+  .fade-in-up-delay-6 { animation-delay: 0.72s; }
+  .fade-in-up-delay-7 { animation-delay: 0.84s; }
+  .fade-in-up-delay-8 { animation-delay: 0.96s; }
 }
 
 @layer utilities {
   .text-primary-accent {
-    color: hsl(270 80% 55%);
+    color: hsl(221 83% 53%);
   }
 
   .text-secondary-accent {
-    color: hsl(178 60% 45%);
+    color: hsl(221 83% 53%);
   }
 
   .text-muted-custom {
-    color: hsl(270 8% 55%);
+    color: hsl(215 16% 47%);
   }
 
   .text-secondary-text {
-    color: hsl(270 8% 75%);
+    color: hsl(215 16% 34%);
+  }
+
+  .hairline {
+    height: 1px;
+    background: linear-gradient(to right, transparent, hsl(214 32% 91%), transparent);
   }
 }
 
-/* Living Origami Background */
+/* Minimal hero background — subtle dot + soft gradient */
 .hero-section {
   position: relative;
   overflow: hidden;
-  perspective: 800px;
-  background: radial-gradient(ellipse at center, hsl(270 30% 12%) 0%, hsl(270 30% 6%) 100%);
+  background:
+    radial-gradient(1200px 600px at 20% -10%, hsl(214 100% 97%) 0%, transparent 60%),
+    radial-gradient(900px 500px at 95% 0%, hsl(221 83% 96%) 0%, transparent 55%),
+    linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
 }
 
+/* Minimal origami - now very subtle blue */
 .drifter-container {
   position: absolute;
   top: 50%;
@@ -220,13 +231,14 @@
   animation: drift linear infinite;
   pointer-events: none;
   will-change: transform;
+  opacity: 0.22;
 }
 
 .origami-crane {
   position: relative;
   transform-style: preserve-3d;
-  animation: bob 3s ease-in-out infinite;
-  filter: drop-shadow(0 0 8px hsl(270 80% 55% / 0.6));
+  animation: bob 4s ease-in-out infinite;
+  filter: drop-shadow(0 2px 10px hsl(221 83% 53% / 0.18));
 }
 
 .crane-part {
@@ -236,39 +248,39 @@
 }
 
 .crane-part.body {
-  width: 40px;
-  height: 12px;
-  background: linear-gradient(135deg, hsl(270 80% 50%) 0%, hsl(270 85% 65%) 100%);
+  width: 38px;
+  height: 10px;
+  background: linear-gradient(135deg, hsl(221 83% 53%) 0%, hsl(213 94% 68%) 100%);
   clip-path: polygon(0% 50%, 30% 0%, 100% 0%, 100% 100%, 30% 100%);
   transform: translateZ(0px);
 }
 
 .crane-part.wing-left {
-  width: 30px;
-  height: 20px;
-  background: linear-gradient(180deg, hsl(270 80% 55%) 0%, hsl(178 60% 50%) 100%);
+  width: 28px;
+  height: 18px;
+  background: linear-gradient(180deg, hsl(221 83% 58%) 0%, hsl(212 100% 85%) 100%);
   clip-path: polygon(0% 100%, 50% 0%, 100% 60%);
   transform-origin: bottom center;
-  transform: translateZ(15px) rotateY(-90deg) skewX(20deg);
-  animation: flap-left 1.2s ease-in-out infinite;
+  transform: translateZ(12px) rotateY(-90deg) skewX(18deg);
+  animation: flap-left 1.6s ease-in-out infinite;
 }
 
 .crane-part.wing-right {
-  width: 30px;
-  height: 20px;
-  background: linear-gradient(180deg, hsl(270 80% 55%) 0%, hsl(178 60% 50%) 100%);
+  width: 28px;
+  height: 18px;
+  background: linear-gradient(180deg, hsl(221 83% 58%) 0%, hsl(212 100% 85%) 100%);
   clip-path: polygon(0% 60%, 50% 0%, 100% 100%);
   transform-origin: bottom center;
-  transform: translateZ(15px) rotateY(90deg) skewX(-20deg);
-  animation: flap-right 1.2s ease-in-out infinite;
+  transform: translateZ(12px) rotateY(90deg) skewX(-18deg);
+  animation: flap-right 1.6s ease-in-out infinite;
 }
 
 .crane-part.tail {
-  width: 20px;
-  height: 10px;
-  background: linear-gradient(90deg, hsl(270 80% 45%) 0%, hsl(270 80% 60%) 100%);
+  width: 18px;
+  height: 9px;
+  background: linear-gradient(90deg, hsl(221 83% 48%) 0%, hsl(221 83% 60%) 100%);
   clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
-  transform: translateZ(0px) translateX(-18px);
+  transform: translateZ(0px) translateX(-16px);
 }
 
 @keyframes drift {
@@ -282,27 +294,43 @@
 
 @keyframes bob {
   0%, 100% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
 }
 
 @keyframes flap-left {
   0%, 100% {
-    transform: translateZ(15px) rotateY(-90deg) skewX(20deg) rotateX(10deg);
+    transform: translateZ(12px) rotateY(-90deg) skewX(18deg) rotateX(8deg);
   }
   50% {
-    transform: translateZ(15px) rotateY(-90deg) skewX(20deg) rotateX(-20deg);
+    transform: translateZ(12px) rotateY(-90deg) skewX(18deg) rotateX(-16deg);
   }
 }
 
 @keyframes flap-right {
   0%, 100% {
-    transform: translateZ(15px) rotateY(90deg) skewX(-20deg) rotateX(10deg);
+    transform: translateZ(12px) rotateY(90deg) skewX(-18deg) rotateX(8deg);
   }
   50% {
-    transform: translateZ(15px) rotateY(90deg) skewX(-20deg) rotateX(-20deg);
+    transform: translateZ(12px) rotateY(90deg) skewX(-18deg) rotateX(-16deg);
   }
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(214 32% 88%);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(215 16% 72%);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
 }

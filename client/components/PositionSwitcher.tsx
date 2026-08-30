@@ -31,11 +31,11 @@ export function PositionSwitcher({
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "flex items-center gap-2 px-3 py-2 rounded-xl border transition-all duration-250",
-          "bg-transparent text-foreground text-sm font-medium whitespace-nowrap",
+          "flex items-center gap-2 px-3.5 py-2 rounded-xl border bg-white shadow-sm transition-all duration-200",
+          "text-slate-700 text-sm font-medium whitespace-nowrap",
           isOpen
-            ? "border-primary/40"
-            : "border-border hover:border-primary/30"
+            ? "border-blue-200 ring-2 ring-blue-100"
+            : "border-slate-200 hover:border-blue-200 hover:text-blue-600"
         )}
       >
         <span className="max-w-[120px] truncate">{currentPosition?.title}</span>
@@ -49,7 +49,7 @@ export function PositionSwitcher({
       </button>
 
       {isOpen && (
-        <div className="absolute top-full mt-2 right-0 min-w-[220px] bg-card border border-border rounded-xl shadow-2xl z-50 overflow-hidden">
+        <div className="absolute top-full mt-2 right-0 min-w-[220px] bg-white border border-slate-200 rounded-xl shadow-[0_12px_32px_rgba(15,23,42,0.12)] z-50 overflow-hidden">
           {positions.map((position) => (
             <button
               key={position.id}
@@ -58,10 +58,10 @@ export function PositionSwitcher({
                 setIsOpen(false);
               }}
               className={cn(
-                "w-full text-left px-4 py-3 text-sm transition-all duration-200 border-b border-border/50 last:border-b-0",
+                "w-full text-left px-4 py-3 text-sm transition-all duration-200 border-b border-slate-100 last:border-b-0",
                 currentPositionId === position.id
-                  ? "bg-primary/15 text-primary"
-                  : "text-secondary-text hover:bg-muted hover:text-foreground"
+                  ? "bg-blue-50 text-blue-700 font-medium"
+                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
               )}
             >
               {position.title}

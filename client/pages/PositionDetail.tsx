@@ -32,7 +32,7 @@ export default function PositionDetail() {
 
   if (!position) {
     return (
-      <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
+      <div className="min-h-screen bg-white text-slate-900 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4 font-display">Position not found</h1>
           <button onClick={() => navigate("/")} className="btn-primary">
@@ -45,11 +45,11 @@ export default function PositionDetail() {
 
   const sectionsContent: Record<string, ReactNode> = {
     "cover-letter": (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Cover Letter" />
-        <div className="max-w-none space-y-4">
+        <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-7 shadow-sm space-y-4">
           {position.coverLetter.split("\n\n").map((paragraph, idx) => (
-            <p key={idx} className="text-secondary-text leading-relaxed whitespace-pre-wrap">
+            <p key={idx} className="text-[14.5px] leading-relaxed text-slate-600 whitespace-pre-wrap">
               {paragraph}
             </p>
           ))}
@@ -57,13 +57,15 @@ export default function PositionDetail() {
       </section>
     ),
     summary: (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Professional Summary" />
-        <p className="text-secondary-text leading-relaxed">{position.summary}</p>
+        <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-7 shadow-sm">
+          <p className="text-[14.5px] leading-relaxed text-slate-600">{position.summary}</p>
+        </div>
       </section>
     ),
     "core-skills": (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Core Skills" />
         <div className="flex flex-wrap gap-2.5">
           {position.coreSkills.map((skill) => (
@@ -73,9 +75,9 @@ export default function PositionDetail() {
       </section>
     ),
     experience: (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Relevant Experience" />
-        <div>
+        <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-7 shadow-sm">
           {position.experience.map((exp, idx) => (
             <ExperienceItem key={idx} {...exp} />
           ))}
@@ -83,32 +85,32 @@ export default function PositionDetail() {
       </section>
     ),
     languages: (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Languages" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {position.languages.map((lang) => (
             <div
               key={lang.name}
-              className="flex justify-between items-center p-4 rounded-xl border border-border/50 bg-card/50"
+              className="flex justify-between items-center p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-blue-200 transition-colors"
             >
-              <span className="font-medium text-foreground">{lang.name}</span>
-              <span className="text-sm text-muted-foreground">{lang.level}</span>
+              <span className="text-sm font-semibold text-slate-900">{lang.name}</span>
+              <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-slate-600">{lang.level}</span>
             </div>
           ))}
         </div>
       </section>
     ),
     strengths: (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Personal Strengths" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {position.personalStrengths.map((strength) => (
             <div
               key={strength}
-              className="p-4 rounded-xl border border-border/50 bg-card/50 flex items-center gap-3"
+              className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center gap-3 hover:border-blue-200 transition-colors"
             >
-              <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
-              <span className="text-foreground">{strength}</span>
+              <div className="w-2 h-2 rounded-full bg-blue-600 flex-shrink-0" />
+              <span className="text-sm font-medium text-slate-700">{strength}</span>
             </div>
           ))}
         </div>
@@ -116,7 +118,7 @@ export default function PositionDetail() {
     ),
     courses:
       position.courses && position.courses.length > 0 ? (
-        <section className="mb-16">
+        <section className="mb-14">
           <SectionHeader title="Courses & Certificates" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {position.courses.map((course) => (
@@ -125,21 +127,21 @@ export default function PositionDetail() {
                 href={course.image}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block rounded-xl border border-border/50 bg-card/50 overflow-hidden hover:border-primary/30 transition-all duration-250"
+                className="group block rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-md hover:border-blue-200 hover:-translate-y-0.5 transition-all duration-200"
               >
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-video overflow-hidden bg-slate-50">
                   <img
                     src={course.image}
                     alt={course.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                   />
                 </div>
                 <div className="p-4">
-                  <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-250 flex items-center gap-2">
+                  <p className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors duration-200 flex items-center gap-2">
                     {course.title}
                     <ExternalLink
                       size={12}
-                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-250"
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-slate-400"
                     />
                   </p>
                 </div>
@@ -149,24 +151,26 @@ export default function PositionDetail() {
         </section>
       ) : null,
     "career-objective": position.careerObjective ? (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Career Objective" />
-        <p className="text-secondary-text leading-relaxed">{position.careerObjective}</p>
+        <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-7 shadow-sm">
+          <p className="text-[14.5px] leading-relaxed text-slate-600">{position.careerObjective}</p>
+        </div>
       </section>
     ) : null,
     education: position.education && position.education.length > 0 ? (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Education" />
-        <div className="space-y-4">
+        <div className="space-y-3">
           {position.education.map((edu, idx) => (
             <div
               key={idx}
-              className="p-4 rounded-xl border border-border/50 bg-card/50"
+              className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-200 transition-colors"
             >
-              <p className="font-medium text-foreground">{edu.degree}</p>
-              <p className="text-sm text-muted-foreground mt-0.5">{edu.institution}</p>
+              <p className="text-sm font-semibold text-slate-900">{edu.degree}</p>
+              <p className="text-sm text-slate-500 mt-0.5">{edu.institution}</p>
               {edu.period && (
-                <p className="text-xs text-muted-foreground mt-0.5">{edu.period}</p>
+                <p className="text-xs text-slate-400 mt-1.5 inline-flex px-2 py-1 rounded-full bg-slate-50 border border-slate-100">{edu.period}</p>
               )}
             </div>
           ))}
@@ -174,22 +178,22 @@ export default function PositionDetail() {
       </section>
     ) : null,
     projects: position.projects && position.projects.length > 0 ? (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Projects" />
-        <div className="space-y-4">
+        <div className="space-y-3">
           {position.projects.map((proj, idx) => (
             <div
               key={idx}
-              className="p-5 rounded-xl border border-border/50 bg-card/50"
+              className="p-5 md:p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:border-blue-200 transition-colors"
             >
-              <p className="font-medium text-foreground">{proj.name}</p>
-              <p className="text-sm text-secondary-text mt-1">{proj.description}</p>
+              <p className="text-sm font-semibold text-slate-900">{proj.name}</p>
+              <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">{proj.description}</p>
               {proj.technologies && proj.technologies.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 mt-3">
                   {proj.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-0.5 rounded-md bg-primary/10 text-primary text-xs"
+                      className="px-2.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-medium"
                     >
                       {tech}
                     </span>
@@ -202,30 +206,30 @@ export default function PositionDetail() {
       </section>
     ) : null,
     "criminal-check": (
-      <section className="mb-16">
+      <section className="mb-14">
         <SectionHeader title="Criminal Background Check" />
         <a
           href="/criminal-check.png"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl border border-border/50 bg-card/50 text-foreground font-medium hover:border-primary/30 hover:text-primary transition-all duration-250"
+          className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white border border-slate-200 text-slate-700 font-medium shadow-sm hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50/50 transition-all duration-200"
         >
-          <FileText size={18} strokeWidth={1.5} />
+          <FileText size={18} strokeWidth={1.6} />
           View Certificate
-          <ExternalLink size={14} className="text-muted-foreground" />
+          <ExternalLink size={14} className="text-slate-400" />
         </a>
       </section>
     ),
     cta: (
-      <section className="py-12 px-8 rounded-2xl border border-border/50 bg-card/30 text-center">
-        <h3 className="text-xl font-semibold font-display mb-3">
+      <section className="py-10 px-8 rounded-2xl bg-slate-900 text-white text-center shadow-[0_8px_24px_rgba(15,23,42,0.12)]">
+        <h3 className="text-xl font-semibold font-display tracking-tight mb-2">
           Interested in working together?
         </h3>
-        <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+        <p className="text-slate-400 mb-6 max-w-md mx-auto text-sm leading-relaxed">
           Feel free to reach out if you'd like to discuss how I can contribute to your organization.
         </p>
-        <a href="mailto:asbel.nascimento123456@gmail.com" className="btn-primary">
-          <Mail size={16} />
+        <a href="mailto:asbel.nascimento123456@gmail.com" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-slate-900 text-sm font-semibold hover:bg-slate-50 transition-colors shadow-sm">
+          <Mail size={16} strokeWidth={1.7} />
           Get in Touch
         </a>
       </section>
@@ -233,21 +237,21 @@ export default function PositionDetail() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900">
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-xl border-b border-slate-200">
         <div className="max-w-content mx-auto px-5 py-3 flex items-center justify-between gap-3">
           <button
             onClick={() => navigate("/")}
-            className="flex items-center gap-1.5 text-muted-foreground hover:text-primary transition-colors duration-250 shrink-0"
+            className="flex items-center gap-1.5 text-slate-500 hover:text-blue-600 transition-colors duration-200 shrink-0"
           >
-            <ChevronLeft size={18} />
+            <ChevronLeft size={18} strokeWidth={1.7} />
             <span className="hidden sm:inline text-sm font-medium">Back</span>
           </button>
 
-          <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-1.5 text-xs text-muted-foreground shrink-0">
-              <MapPin size={14} />
+          <div className="flex items-center gap-2.5">
+            <div className="hidden md:flex items-center gap-1.5 text-xs font-medium text-slate-500 bg-slate-50 border border-slate-100 px-3 py-1.5 rounded-full shrink-0">
+              <MapPin size={14} className="text-slate-400" />
               <span>Dublin, Ireland</span>
             </div>
             <button
@@ -255,9 +259,9 @@ export default function PositionDetail() {
                 const { generateCV } = await import("@/lib/generateCV");
                 generateCV(position);
               }}
-              className="btn-secondary !py-2 !px-4 !text-xs"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-semibold shadow-sm hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50 transition-all"
             >
-              <Download size={14} />
+              <Download size={14} strokeWidth={1.7} />
               <span className="hidden sm:inline">Download CV</span>
             </button>
             <PositionSwitcher
@@ -269,38 +273,40 @@ export default function PositionDetail() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-content mx-auto px-5 py-12">
+      <main className="max-w-content mx-auto px-5 py-10 md:py-12">
         {/* Position Title & Contact */}
-        <div className="mb-12 pb-10 border-b border-border/50">
-          <h1 className="text-3xl md:text-4xl font-bold font-display mb-6">{position.title}</h1>
-          <div className="flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <MapPin size={14} />
-              <span>Dublin, Ireland</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Mail size={14} />
-              <a
-                href="mailto:asbel.nascimento123456@gmail.com"
-                className="hover:text-primary transition-colors duration-250"
-              >
-                asbel.nascimento123456@gmail.com
-              </a>
-            </div>
+        <div className="mb-10 pb-8 border-b border-slate-200">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold tracking-wide mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+            Tailored resume
+          </div>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight font-display text-slate-900 mb-5">{position.title}</h1>
+          <div className="flex flex-wrap gap-3 text-sm">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 shadow-sm">
+              <MapPin size={14} className="text-slate-400" />
+              Dublin, Ireland
+            </span>
+            <a
+              href="mailto:asbel.nascimento123456@gmail.com"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 hover:text-blue-600 hover:border-blue-200 shadow-sm transition-colors"
+            >
+              <Mail size={14} className="text-slate-400" />
+              asbel.nascimento123456@gmail.com
+            </a>
             {position.phone && (
-              <div className="flex items-center gap-2">
-                <Phone size={14} />
-                <span>{position.phone}</span>
-              </div>
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-600 shadow-sm">
+                <Phone size={14} className="text-slate-400" />
+                {position.phone}
+              </span>
             )}
             {position.website && (
               <a
                 href={position.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary text-sm font-medium hover:bg-primary/20 transition-all duration-250"
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 shadow-sm transition-all"
               >
-                <Globe size={14} />
+                <Globe size={14} strokeWidth={1.7} />
                 Meu site
                 <ExternalLink size={12} />
               </a>
@@ -361,9 +367,9 @@ export default function PositionDetail() {
               onEditLabel={edit.editSectionLabel}
             >
               {section.type === "custom" ? (
-                <section className="mb-16">
+                <section className="mb-14">
                   <SectionHeader title={section.label} />
-                  <p className="text-secondary-text leading-relaxed whitespace-pre-wrap">
+                  <p className="text-slate-600 leading-relaxed whitespace-pre-wrap bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
                     {section.content}
                   </p>
                 </section>
@@ -376,9 +382,9 @@ export default function PositionDetail() {
       </main>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-border/50 mt-12">
+      <footer className="py-10 border-t border-slate-200 bg-white">
         <div className="max-w-content mx-auto px-5 text-center">
-          <p className="text-sm text-muted-foreground">&copy; 2026 Asbel Nascimento</p>
+          <p className="text-sm text-slate-400">&copy; 2026 Asbel Nascimento — Dublin, Ireland</p>
         </div>
       </footer>
 

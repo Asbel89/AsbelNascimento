@@ -187,44 +187,47 @@ export function ChatWidget() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110",
+          "fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-[1.03] border",
           isOpen
-            ? "bg-muted rotate-90"
-            : "bg-primary text-white animate-pulse-ring",
+            ? "bg-white border-slate-200 text-slate-700 rotate-90 shadow-[0_8px_24px_rgba(15,23,42,0.12)]"
+            : "bg-blue-600 text-white border-blue-600 shadow-[0_8px_24px_rgba(37,99,235,0.28)] animate-pulse-ring",
         )}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
-        {isOpen ? <X size={22} /> : <MessageCircle size={22} />}
+        {isOpen ? <X size={22} strokeWidth={1.7} /> : <MessageCircle size={22} strokeWidth={1.7} />}
       </button>
 
       {/* Chat panel */}
       <div
         className={cn(
-          "fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-48px)] rounded-2xl shadow-2xl border border-border/50 overflow-hidden transition-all duration-300 origin-bottom-right",
+          "fixed bottom-24 right-6 z-50 w-[380px] max-w-[calc(100vw-32px)] rounded-2xl shadow-[0_12px_40px_rgba(15,23,42,0.12),0_4px_12px_rgba(15,23,42,0.08)] border bg-white overflow-hidden transition-all duration-300 origin-bottom-right",
           isOpen
             ? "scale-100 opacity-100 pointer-events-auto"
             : "scale-95 opacity-0 pointer-events-none",
         )}
-        style={{ backgroundColor: "hsl(270 25% 10%)" }}
+        style={{ borderColor: "#E2E8F0" }}
       >
         {/* Header */}
-        <div className="bg-primary/20 px-5 py-4 flex items-center gap-3 border-b border-border/30">
-          <div className="w-10 h-10 rounded-full bg-primary/30 flex items-center justify-center">
-            <Bot size={20} className="text-primary" />
+        <div className="bg-slate-50 px-5 py-4 flex items-center gap-3 border-b border-slate-200">
+          <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
+            <Bot size={18} className="text-white" strokeWidth={1.7} />
           </div>
           <div className="flex-1">
-            <p className="text-sm font-semibold text-foreground">
+            <p className="text-sm font-semibold tracking-tight text-slate-900">
               Asbel's Assistant
             </p>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-slate-500">
               AI Career Representative
             </p>
           </div>
-          <div className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
+          <div className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="text-[11px] font-medium text-emerald-700">Online</span>
+          </div>
         </div>
 
         {/* Messages */}
-        <div className="h-[400px] overflow-y-auto px-4 py-4 space-y-4 scroll-smooth">
+        <div className="h-[380px] overflow-y-auto px-4 py-4 space-y-4 scroll-smooth bg-white">
           {messages.map((msg) => (
             <div
               key={msg.id}
@@ -234,31 +237,31 @@ export function ChatWidget() {
               )}
             >
               {msg.role === "assistant" && (
-                <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                  <Bot size={14} className="text-primary" />
+                <div className="w-7 h-7 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0 mt-1">
+                  <Bot size={13} className="text-blue-600" strokeWidth={1.7} />
                 </div>
               )}
               <div
                 className={cn(
-                  "max-w-[80%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed",
+                  "max-w-[80%] px-3.5 py-2.5 rounded-2xl text-[13.5px] leading-relaxed",
                   msg.role === "user"
-                    ? "bg-primary text-white rounded-br-md"
-                    : "bg-white/5 text-foreground border border-white/5 rounded-bl-md",
+                    ? "bg-blue-600 text-white rounded-br-md shadow-sm"
+                    : "bg-slate-50 text-slate-700 border border-slate-100 rounded-bl-md",
                 )}
               >
                 {msg.content ? (
                   parseMarkdown(msg.content)
                 ) : (
                   <div className="flex gap-1 py-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-bounce" style={{ animationDelay: "0ms" }} />
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-bounce" style={{ animationDelay: "150ms" }} />
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary/40 animate-bounce" style={{ animationDelay: "300ms" }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-bounce" style={{ animationDelay: "0ms" }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-bounce" style={{ animationDelay: "150ms" }} />
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-300 animate-bounce" style={{ animationDelay: "300ms" }} />
                   </div>
                 )}
               </div>
               {msg.role === "user" && (
-                <div className="w-7 h-7 rounded-full bg-muted flex items-center justify-center flex-shrink-0 mt-1">
-                  <User size={14} />
+                <div className="w-7 h-7 rounded-full bg-slate-900 flex items-center justify-center flex-shrink-0 mt-1">
+                  <User size={13} className="text-white" strokeWidth={1.7} />
                 </div>
               )}
             </div>
@@ -268,13 +271,13 @@ export function ChatWidget() {
 
         {/* Quick actions - only show when conversation just started */}
         {messages.length <= 2 && (
-          <div className="px-4 pb-2 flex flex-wrap gap-2">
+          <div className="px-4 pb-2 flex flex-wrap gap-1.5 bg-white border-t border-slate-100 pt-3">
             {quickQuestions.map((q) => (
               <button
                 key={q}
                 onClick={() => sendMessage(q)}
                 disabled={isLoading}
-                className="text-xs px-3 py-1.5 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors disabled:opacity-40"
+                className="text-xs font-medium px-3 py-1.5 rounded-full border border-slate-200 bg-white text-slate-600 hover:border-blue-200 hover:text-blue-600 hover:bg-blue-50 transition-colors disabled:opacity-40"
               >
                 {q}
               </button>
@@ -283,8 +286,8 @@ export function ChatWidget() {
         )}
 
         {/* Input */}
-        <div className="px-4 py-3 border-t border-border/30 bg-background/50">
-          <div className="flex items-center gap-2">
+        <div className="px-3 py-3 border-t border-slate-200 bg-slate-50">
+          <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-xl px-2 py-1.5 shadow-sm focus-within:border-blue-300 focus-within:ring-2 focus-within:ring-blue-100 transition-all">
             <input
               ref={inputRef}
               type="text"
@@ -292,15 +295,15 @@ export function ChatWidget() {
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Ask about Asbel's experience..."
-              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/50"
+              className="flex-1 bg-transparent px-2 py-1.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none"
               disabled={isLoading}
             />
             <button
               onClick={() => sendMessage()}
               disabled={!input.trim() || isLoading}
-              className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center hover:bg-primary/80 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
             >
-              <Send size={16} />
+              <Send size={15} strokeWidth={1.7} />
             </button>
           </div>
         </div>

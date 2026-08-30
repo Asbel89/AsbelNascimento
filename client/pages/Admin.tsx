@@ -152,7 +152,7 @@ export default function Admin() {
                     {stats.recentSessions.map((s) => (
                       <div
                         key={s.id}
-                        className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5"
+                        className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100"
                       >
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium text-foreground truncate">
@@ -193,9 +193,9 @@ export default function Admin() {
                 <div className="space-y-3">
                   <a
                     href="/"
-                    className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all text-sm"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/50 transition-all text-sm"
                   >
-                    <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <span className="w-8 h-8 rounded-lg bg-white border border-slate-100 flex items-center justify-center">
                       <ArrowLeft size={14} className="text-primary" />
                     </span>
                     <div>
@@ -205,9 +205,9 @@ export default function Admin() {
                   </a>
                   <a
                     href="mailto:asbel.nascimento123456@gmail.com"
-                    className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 transition-all text-sm"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/50 transition-all text-sm"
                   >
-                    <span className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <span className="w-8 h-8 rounded-lg bg-white border border-slate-100 flex items-center justify-center">
                       <MessageSquare size={14} className="text-primary" />
                     </span>
                     <div>
