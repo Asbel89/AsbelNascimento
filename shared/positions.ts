@@ -46,12 +46,45 @@ export interface Position {
   projects?: Project[];
 }
 
+const workExperience: Experience[] = [
+  {
+    title: "Housekeeper",
+    company: "Casa Grande Hotel | Guarujá, Brazil",
+    period: "19/07/2026 – 29/08/2026",
+    description: [
+      "Cleaning and maintaining guest rooms and private residences to a high standard.",
+      "Changing bed linens and towels, ensuring cleanliness and comfort.",
+      "Dusting, vacuuming, mopping floors, and sanitizing bathrooms within deadlines.",
+    ],
+  },
+  {
+    title: "Cargo Surveyor",
+    company: "Control Union | Port of Santos, Brazil",
+    period: "2023 – 07/2026",
+    description: [
+      "Inspected and monitored cargo operations, including grains and agricultural products.",
+      "Monitored loading and unloading operations.",
+      "Collaborated with teams, clients, and operational staff.",
+    ],
+  },
+  {
+    title: "Cleaner",
+    company: "Praiamar Shopping | Santos, Brazil",
+    period: "2022 – 2023",
+    description: [
+      "Cleaning and sanitizing common areas, including restrooms, corridors, food court, and entrances.",
+      "Replenishing hygiene supplies like toilet paper, soap, paper towels, and other essentials.",
+      "Working as part of a team to maintain a clean, organized and safe environment for customers and staff.",
+    ],
+  },
+];
+
 export const positions: Position[] = [
   {
     id: "warehouse-operative",
     title: "Warehouse Operative",
     emoji: "📦",
-    cardDescription: "Inventory \u2022 Picking \u2022 Packing",
+    cardDescription: "Inventory • Picking • Packing",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the Warehouse Operative position within your team. I am excited about the opportunity to bring my dedication, reliability, and strong work ethic to your warehouse environment.
@@ -74,30 +107,7 @@ Asbel Nascimento`,
       "Time Management",
       "Teamwork",
     ],
-    experience: [
-      {
-        title: "Quality Inspector",
-        company: "Brazil",
-        period: "July 2024 - Present",
-        description: [
-          "Worked in a fast-paced environment while following strict procedures.",
-          "Inspected products to ensure compliance with company procedures.",
-          "Demonstrated reliability, punctuality, and a strong work ethic.",
-          "Collaborated with different teams to ensure efficient operations.",
-        ],
-      },
-      {
-        title: "Otica Prevent | S\u00e3o Vicente, Brazil",
-        company: "September 2023 - July 2024",
-        period: "",
-        description: [
-          "Maintained clean and organized work areas while complying with procedures.",
-          "Supported daily business activities and administrative tasks.",
-          "Derived excellent customer feedback and maintained professionalism and efficiency.",
-          "Collaborated with different team members to ensure efficient operations.",
-        ],
-      },
-    ],
+    experience: workExperience,
     languages: [
       { name: "Portuguese", level: "Native" },
       { name: "English", level: "Intermediate (Improving Daily)" },
@@ -113,7 +123,7 @@ Asbel Nascimento`,
     id: "kitchen-porter",
     title: "Kitchen Porter",
     emoji: "🍽️",
-    cardDescription: "Hygiene \u2022 Food Safety \u2022 Teamwork",
+    cardDescription: "Hygiene • Food Safety • Teamwork",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the Kitchen Porter position. I am excited about the opportunity to join your team.
@@ -138,30 +148,7 @@ Asbel Nascimento`,
       "Attention to Detail",
       "POS Systems",
     ],
-    experience: [
-      {
-        title: "Customer Service Assistant",
-        company: "Brazil",
-        period: "August 2024 - Present",
-        description: [
-          "Maintained a pleasant relationship with customers by ensuring a clean and organized environment.",
-          "Worked closely with team members to provide excellent customer service.",
-          "Developed strong communication and interpersonal skills.",
-          "Worked efficiently and ensured smooth daily operations.",
-        ],
-      },
-      {
-        title: "Quality Inspector",
-        company: "Otica Prevent | S\u00e3o Vicente, Brazil",
-        period: "September 2023 - July 2024",
-        description: [
-          "Delivered exceptional customer relationships by ensuring a clean and organized professional workplace.",
-          "Assisted customers by identifying issues and providing detailed resolutions.",
-          "Demonstrated reliability, punctuality, and a strong work ethic.",
-          "Supported safe work areas while complying with operational tasks.",
-        ],
-      },
-    ],
+    experience: workExperience,
     languages: [
       { name: "Portuguese", level: "Native" },
       { name: "English", level: "Intermediate (Improving Daily)" },
@@ -177,7 +164,7 @@ Asbel Nascimento`,
     id: "housekeeper",
     title: "Housekeeper",
     emoji: "🏨",
-    cardDescription: "Cleaning \u2022 Organization \u2022 Detail",
+    cardDescription: "Cleaning • Organization • Detail",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the Housekeeper position. I am excited about the opportunity to join your team.
@@ -200,30 +187,7 @@ Asbel Nascimento`,
       "Time Management",
       "Teamwork",
     ],
-    experience: [
-      {
-        title: "Quality Inspector",
-        company: "Brazil",
-        period: "July 2024 - Present",
-        description: [
-          "Worked in a fast-paced environment while following strict procedures.",
-          "Maintained clean and organized work areas while complying with procedures.",
-          "Inspected areas to ensure compliance with company standards.",
-          "Collaborated with different teams to ensure efficient operations.",
-        ],
-      },
-      {
-        title: "Otica Prevent | S\u00e3o Vicente, Brazil",
-        company: "September 2023 - July 2024",
-        period: "",
-        description: [
-          "Maintained clean and organized work areas while complying with procedures.",
-          "Supported daily business activities and administrative tasks.",
-          "Derived excellent customer feedback and maintained professionalism and efficiency.",
-          "Collaborated with different team members to ensure efficient operations.",
-        ],
-      },
-    ],
+    experience: workExperience,
     languages: [
       { name: "Portuguese", level: "Native" },
       { name: "English", level: "Intermediate (Improving Daily)" },
@@ -239,7 +203,7 @@ Asbel Nascimento`,
     id: "it-support",
     title: "IT Support",
     emoji: "💻",
-    cardDescription: "Troubleshooting \u2022 Hardware \u2022 Networking",
+    cardDescription: "Troubleshooting • Hardware • Networking",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the IT Support position. I am excited about the opportunity to join your team.
@@ -264,30 +228,7 @@ Asbel Nascimento`,
       "Time Management",
       "Fast Learner",
     ],
-    experience: [
-      {
-        title: "IT Support",
-        company: "Brazil",
-        period: "July 2024 - Present",
-        description: [
-          "Investigated issues and followed detailed procedures to ensure efficient IT support and maintaining high quality standards.",
-          "Maintained accurate documentation and completed detailed reports.",
-          "Consistently demonstrated reliability, punctuality, and a strong work ethic.",
-          "Maintained excellent customer relationships by ensuring seamless IT solutions.",
-        ],
-      },
-      {
-        title: "Otica Prevent | S\u00e3o Vicente, Brazil",
-        company: "September 2023 - July 2024",
-        period: "",
-        description: [
-          "Assisted customers by identifying IT issues and providing detailed problem-solving.",
-          "Demonstrated reliability, punctuality, and strong work ethic.",
-          "Supported multiple customers while managing IT support systems.",
-          "Developed excellent communication and interpersonal skills.",
-        ],
-      },
-    ],
+    experience: workExperience,
     languages: [
       { name: "Portuguese", level: "Native" },
       { name: "English", level: "Intermediate (Improving Daily)" },
@@ -319,7 +260,7 @@ Asbel Nascimento`,
     id: "barista",
     title: "Barista",
     emoji: "☕",
-    cardDescription: "Coffee \u2022 Customer Service \u2022 POS",
+    cardDescription: "Coffee • Customer Service • POS",
     coverLetter: `Dear Hiring Manager,
 
 I am writing to express my sincere interest in the Barista position. I am excited about the opportunity to join your team.
@@ -344,30 +285,7 @@ Asbel Nascimento`,
       "Attention to Detail",
       "POS Systems",
     ],
-    experience: [
-      {
-        title: "Customer Service Assistant",
-        company: "Brazil",
-        period: "August 2024 - Present",
-        description: [
-          "Maintained a pleasant relationship with customers by ensuring a clean and organized environment.",
-          "Organized and welcoming environment.",
-          "Developed strong communication and interpersonal skills.",
-          "Worked efficiently and ensured smooth daily operations.",
-        ],
-      },
-      {
-        title: "Quality Inspector",
-        company: "Otica Prevent | S\u00e3o Vicente, Brazil",
-        period: "September 2023 - July 2024",
-        description: [
-          "Delivered exceptional customer relationships by maintaining a clean and organized professional workplace.",
-          "Assisted customers by identifying issues and providing detailed resolutions.",
-          "Demonstrated reliability, punctuality, and a strong work ethic.",
-          "Supported safe work areas while complying with operational tasks.",
-        ],
-      },
-    ],
+    experience: workExperience,
     languages: [
       { name: "Portuguese", level: "Native" },
       { name: "English", level: "Intermediate (Improving Daily)" },

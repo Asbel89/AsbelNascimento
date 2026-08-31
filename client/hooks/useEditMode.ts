@@ -11,7 +11,13 @@ export interface EditSection {
 }
 
 export function useEditMode(pageId: string, defaultSections: EditSection[]) {
-  const [isAuthorized, setIsAuthorized] = useState(() => localStorage.getItem(AUTH_KEY) === "true");
+  const [isAuthorized, setIsAuthorized] = useState(() => {
+    try {
+      return localStorage.getItem(AUTH_KEY) === "true";
+    } catch {
+      return false;
+    }
+  });
   const [showPassword, setShowPassword] = useState(false);
   const [passwordError, setPasswordError] = useState("");
   const [sections, setSections] = useState<EditSection[]>(() => {
